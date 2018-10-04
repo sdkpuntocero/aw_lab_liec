@@ -1,0 +1,89 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="site.master.cs" Inherits="aw_lab_liec.site" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+	<!-- Bootstrap -->
+
+<%--	<link href="Content/bootstrap.min.css" rel="stylesheet" />
+	<link href="styles/style.css" rel="stylesheet" />
+
+	<script src="Scripts/jquery-3.3.1.min.js"></script>
+
+	<script src="Scripts/bootstrap.min.js"></script>--%>
+
+	<link href="Content/animate.min.css" rel="stylesheet" />
+
+	<link rel="shortcut icon" href="img/ico_liec.png" type="image/png" />
+
+	<title> / Acceso</title>
+	<link href="styles/style.css" rel="stylesheet" />
+
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="acceso/vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="acceso/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="acceso/fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="acceso/vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="acceso/vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="acceso/vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="acceso/vendor/select2/select2.min.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="acceso/vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="acceso/css/util.css">
+	<link rel="stylesheet" type="text/css" href="acceso/css/main.css">
+<!--===============================================================================================-->
+	<!--===============================================================================================-->
+	<script src="acceso/vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="acceso/vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="acceso/vendor/bootstrap/js/popper.js"></script>
+	<script src="acceso/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="acceso/vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="acceso/vendor/daterangepicker/moment.min.js"></script>
+	<script src="acceso/vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="acceso/vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+	<script src="acceso/js/main.js"></script>
+	<asp:ContentPlaceHolder ID="head" runat="server">
+	</asp:ContentPlaceHolder>
+</head>
+<body>
+	<script>
+		function CheckOne(obj) {
+			var grid = obj.parentNode.parentNode.parentNode;
+			var inputs = grid.getElementsByTagName("input");
+			for (var i = 0; i < inputs.length; i++) {
+				if (inputs[i].type == "checkbox") {
+					if (obj.checked && inputs[i] != obj && inputs[i].checked) {
+						inputs[i].checked = false;
+					}
+				}
+			}
+		}
+	</script>
+	<form id="form1" runat="server">
+		<div>
+			<asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+			</asp:ContentPlaceHolder>
+		</div>
+	</form>
+	<br />
+
+</body>
+</html>

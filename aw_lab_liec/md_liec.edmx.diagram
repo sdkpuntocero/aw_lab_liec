@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="61893bed7a444347896501fd6cab6bd0" Name="Diagram1" ShowGrid="true" DisplayType="true" SnapToGrid="false">
+        <EntityTypeShape EntityType="lab_liecModel.fac_sit_concreto" Width="1.5000000000000002" PointX="0.7500005000000004" PointY="26.790852376302091" />
+        <EntityTypeShape EntityType="lab_liecModel.fac_tipo_concreto" Width="1.5000000000000002" PointX="0.7500005000000004" PointY="24.445168782552095" />
+        <EntityTypeShape EntityType="lab_liecModel.fact_areas" Width="1.5" PointX="6.0000005000000005" PointY="24.041106282552086" />
+        <EntityTypeShape EntityType="lab_liecModel.fact_departamento" Width="1.5" PointX="6.000001000000001" PointY="44.136535970052087" />
+        <EntityTypeShape EntityType="lab_liecModel.fact_especimen" Width="1.5000000000000002" PointX="0.7500005000000004" PointY="11.09948518880209" />
+        <EntityTypeShape EntityType="lab_liecModel.fact_est_areas" Width="1.5" PointX="3.7500005000000005" PointY="34.618010579427079" />
+        <EntityTypeShape EntityType="lab_liecModel.fact_est_caja" Width="1.5" PointX="3.7500005000000005" PointY="10.618010579427086" />
+        <EntityTypeShape EntityType="lab_liecModel.fact_est_clte" Width="1.5000000000000002" PointX="0.7500005000000004" PointY="15.790852376302087" />
+        <EntityTypeShape EntityType="lab_liecModel.fact_est_concreto" Width="1.5000000000000002" PointX="0.7500005000000004" PointY="29.136535970052091" />
+        <EntityTypeShape EntityType="lab_liecModel.fact_est_e_env" Width="1.5" PointX="3.7500005000000005" PointY="31.618010579427086" />
+        <EntityTypeShape EntityType="lab_liecModel.fact_est_e_recep" Width="1.5" PointX="6.7500005000000005" PointY="34.618010579427086" />
+        <EntityTypeShape EntityType="lab_liecModel.fact_est_gast" Width="1.5000000000000002" PointX="0.7500005000000004" PointY="31.618010579427079" />
+        <EntityTypeShape EntityType="lab_liecModel.fact_est_obra" Width="1.5" PointX="6.000001000000001" PointY="7.7908523763020874" />
+        <EntityTypeShape EntityType="lab_liecModel.fact_est_rub" Width="1.5" PointX="6.7500005000000005" PointY="5.3490180664062521" />
+        <EntityTypeShape EntityType="lab_liecModel.fact_estatus" Width="1.5" PointX="6.000001000000001" PointY="39.445168782552088" />
+        <EntityTypeShape EntityType="lab_liecModel.fact_generos" Width="1.5" PointX="6.000001000000001" PointY="41.790852376302084" />
+        <EntityTypeShape EntityType="lab_liecModel.fact_perfil" Width="1.5" PointX="6.000001000000001" PointY="37.099485188802085" />
+        <EntityTypeShape EntityType="lab_liecModel.fact_tipo_rfc" Width="1.5000000000000002" PointX="0.7500005000000004" PointY="13.445168782552091" />
+        <EntityTypeShape EntityType="lab_liecModel.fact_tipo_rubro" Width="1.5" PointX="6.7500005000000005" PointY="31.694701660156255" />
+        <EntityTypeShape EntityType="lab_liecModel.fact_tipo_servicio" Width="1.5" PointX="6.000001000000001" PointY="10.445168782552084" />
+        <EntityTypeShape EntityType="lab_liecModel.inf_caja" Width="1.5" PointX="6.0000005000000005" PointY="14.752654134114589" />
+        <EntityTypeShape EntityType="lab_liecModel.inf_clte" Width="1.5000000000000004" PointX="3.0000005000000005" PointY="13.175749837239586" />
+        <EntityTypeShape EntityType="lab_liecModel.inf_clte_obras" Width="1.5" PointX="8.250001000000001" PointY="10.656503417968754" />
+        <EntityTypeShape EntityType="lab_liecModel.inf_cont_usr" Width="1.5" PointX="10.500001000000001" PointY="25.041106282552086" />
+        <EntityTypeShape EntityType="lab_liecModel.inf_control_montos" Width="1.5" PointX="11.2500005" PointY="16.425709147135418" />
+        <EntityTypeShape EntityType="lab_liecModel.inf_email_envio" Width="1.5" PointX="6.0000005000000005" PointY="19.752654134114586" />
+        <EntityTypeShape EntityType="lab_liecModel.inf_email_recepcion" Width="1.5" PointX="9.0000005" PointY="20.233407714843754" />
+        <EntityTypeShape EntityType="lab_liecModel.inf_emp" Width="1.5" PointX="0.75" PointY="19.175749837239586" />
+        <EntityTypeShape EntityType="lab_liecModel.inf_gastos" Width="1.5000000000000004" PointX="3.0000005000000005" PointY="25.656503417968754" />
+        <EntityTypeShape EntityType="lab_liecModel.inf_gastos_dep" Width="1.5" PointX="5.2500005000000005" PointY="28.329558430989586" />
+        <EntityTypeShape EntityType="lab_liecModel.inf_mrp_concreto" Width="1.5000000000000004" PointX="3.0000005000000005" PointY="18.502694824218754" />
+        <EntityTypeShape EntityType="lab_liecModel.inf_rubro" Width="1.5" PointX="9.0000005" PointY="15.368051269531254" />
+        <EntityTypeShape EntityType="lab_liecModel.inf_sepomex" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="lab_liecModel.inf_usuarios" Width="1.5" PointX="8.250001000000001" PointY="23.791146972656254" />
+        <AssociationConnector Association="lab_liecModel.FK_inf_mrp_concreto_fac_situacion_concreto" />
+        <AssociationConnector Association="lab_liecModel.FK_inf_mrp_concreto_fac_tipo_concreto" />
+        <AssociationConnector Association="lab_liecModel.FK_fact_areas_fact_estatus_areas" />
+        <AssociationConnector Association="lab_liecModel.FK_fact_areas_inf_emp" />
+        <AssociationConnector Association="lab_liecModel.FK_inf_usuarios_fact_areas" />
+        <AssociationConnector Association="lab_liecModel.FK_general_usuarios_fact_departamento" />
+        <AssociationConnector Association="lab_liecModel.FK_inf_mrp_concreto_fact_especimen" />
+        <AssociationConnector Association="lab_liecModel.FK_inf_caja_fact_est_caja" />
+        <AssociationConnector Association="lab_liecModel.FK_inf_clte_fact_estatus_clte" />
+        <AssociationConnector Association="lab_liecModel.FK_inf_mrp_concreto_fact_est_concreto" />
+        <AssociationConnector Association="lab_liecModel.FK_inf_email_envio_fact_est_e_env" />
+        <AssociationConnector Association="lab_liecModel.FK_inf_email_recepcion_fact_est_e_recep" />
+        <AssociationConnector Association="lab_liecModel.FK_inf_gastos_fact_est_gast" />
+        <AssociationConnector Association="lab_liecModel.FK_inf_clte_obras_fact_estatus_obra" />
+        <AssociationConnector Association="lab_liecModel.FK_inf_rubro_fact_est_rub" />
+        <AssociationConnector Association="lab_liecModel.FK_general_usuarios_fact_estatus" />
+        <AssociationConnector Association="lab_liecModel.FK_general_usuarios_fact_generos" />
+        <AssociationConnector Association="lab_liecModel.FK_general_usuarios_fact_perfil" />
+        <AssociationConnector Association="lab_liecModel.FK_inf_clte_fact_tipo_rfc" />
+        <AssociationConnector Association="lab_liecModel.FK_inf_rubro_fact_tipo_rubro" />
+        <AssociationConnector Association="lab_liecModel.FK_inf_clte_obras_fact_tipo_servicio" />
+        <AssociationConnector Association="lab_liecModel.FK_inf_caja_inf_emp" />
+        <AssociationConnector Association="lab_liecModel.FK_inf_clte_inf_emp" />
+        <AssociationConnector Association="lab_liecModel.FK_inf_clte_obras_inf_clte" />
+        <AssociationConnector Association="lab_liecModel.FK_contacto_usuarios_general_usuarios" />
+        <AssociationConnector Association="lab_liecModel.FK_inf_control_montos_inf_rubro" />
+        <AssociationConnector Association="lab_liecModel.FK_inf_email_envio_inf_emp" />
+        <AssociationConnector Association="lab_liecModel.FK_inf_email_recepcion_inf_emp" />
+        <AssociationConnector Association="lab_liecModel.FK_inf_gastos_inf_emp" />
+        <AssociationConnector Association="lab_liecModel.FK_inf_mrp_concreto_inf_emp" />
+        <AssociationConnector Association="lab_liecModel.FK_inf_rubro_inf_emp" />
+        <AssociationConnector Association="lab_liecModel.FK_inf_gastos_dep_inf_gastos" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
