@@ -14,16 +14,7 @@ namespace aw_lab_liec
     
     public partial class fact_tipo_rfc
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public fact_tipo_rfc()
-        {
-            this.inf_clte = new HashSet<inf_clte>();
-        }
-    
         public int id_tipo_rfc { get; set; }
         public string desc_tipo_rfc { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<inf_clte> inf_clte { get; set; }
     }
 }

@@ -381,9 +381,9 @@
                                                                     <asp:CheckBox ID="chk_clte_obras" runat="server" onclick="CheckOne(this)" AutoPostBack="true" OnCheckedChanged="chk_clte_obras_CheckedChanged" />
                                                                 </ItemTemplate>
                                                             </asp:TemplateField>
-                                                            <asp:BoundField DataField="clave_obra" HeaderText="Clave de Obra" SortExpression="clave_obra" Visible="true" />
-                                                            <asp:BoundField DataField="desc_obra" HeaderText="Descripción Obra" SortExpression="desc_obra" />
-                                                            <asp:BoundField DataField="fecha_registro" HeaderText="Fecha de Registro" SortExpression="fecha_registro" DataFormatString="{0:dd-MM-yyyy}" HtmlEncode="false" />
+                                                            <asp:BoundField DataField="clave_obra" HeaderText="CLAVE" SortExpression="clave_obra" Visible="true" />
+                                                            <asp:BoundField DataField="desc_obra" HeaderText="DESCRIPCIÓN" SortExpression="desc_obra" />
+                                                            <asp:BoundField DataField="fecha_registro" HeaderText="REGISTRO" SortExpression="fecha_registro" DataFormatString="{0:dd-MM-yyyy}" HtmlEncode="false" />
                                                             <asp:TemplateField HeaderText="Estatus">
                                                                 <ItemTemplate>
                                                                     <asp:DropDownList ID="ddl_clteobra_estatus" runat="server" AutoPostBack="true" OnSelectedIndexChanged="ddl_clteobra_estatus_SelectedIndexChanged">
@@ -507,7 +507,7 @@
                                             <p class="text-left">
                                                 <div class="input-group" id="div_rppc" runat="server" visible="true">
                                                     <span class="input-group-addon">
-                                                        <asp:Label CssClass="control-label fuente_css02" ID="lbl_buscar_rppc" runat="server" Text="*BUSCAR CLIENTE:"></asp:Label>
+                                                        <asp:Label CssClass="control-label fuente_css02" ID="lbl_buscar_rppc" runat="server" Text="*BUSCAR OBRA:"></asp:Label>
                                                     </span>
                                                     <asp:TextBox CssClass="form-control input-box" ID="txt_buscar_rppc" runat="server" placeholder="letras/números" TextMode="Search" TabIndex="3"></asp:TextBox>
 
@@ -532,6 +532,39 @@
                                             </p>
                                         </div>
                                         <div class="panel-body">
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <asp:GridView CssClass="table" ID="gv_rppc" runat="server" AutoGenerateColumns="False" AllowPaging="True" CellPadding="4" ForeColor="#333333" GridLines="None" TabIndex="5" OnRowDataBound="gv_rppc_RowDataBound">
+                                                        <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
+                                                        <Columns>
+                                                            <asp:TemplateField>
+                                                                <ItemTemplate>
+                                                                    <asp:CheckBox ID="chk_rppc" runat="server" onclick="CheckOne(this)" AutoPostBack="true" OnCheckedChanged="chk_rppc_CheckedChanged" />
+                                                                </ItemTemplate>
+                                                            </asp:TemplateField>
+                                                            <asp:BoundField DataField="no_muesra" HeaderText="# MUESTRA" SortExpression="no_muesra" Visible="true" />
+                                                            <asp:BoundField DataField="fecha_registro" HeaderText="REGISTRO" SortExpression="fecha_registro" DataFormatString="{0:dd-MM-yyyy}" HtmlEncode="false" />
+                                                            <asp:TemplateField HeaderText="ESTATUS">
+                                                                <ItemTemplate>
+                                                                    <asp:DropDownList ID="ddl_rppc_est" runat="server" AutoPostBack="true" OnSelectedIndexChanged="ddl_rppc_est_SelectedIndexChanged">
+                                                                    </asp:DropDownList>
+                                                                </ItemTemplate>
+                                                            </asp:TemplateField>
+                                                        </Columns>
+                                                        <EditRowStyle BackColor="#999999" />
+                                                        <FooterStyle BackColor="#5D7B9D" ForeColor="White" />
+                                                        <HeaderStyle BackColor="#104D8d" ForeColor="White" />
+                                                        <PagerSettings Mode="NumericFirstLast" FirstPageText="Inicio" LastPageText="Final" />
+                                                        <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
+                                                        <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
+                                                        <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
+                                                        <SortedAscendingCellStyle BackColor="#E9E7E2" />
+                                                        <SortedAscendingHeaderStyle BackColor="#506C8C" />
+                                                        <SortedDescendingCellStyle BackColor="#FFFDF8" />
+                                                        <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
+                                                    </asp:GridView>
+                                                </div>
+                                            </div>
                                             <div class="row">
                                                 <div class="col-lg-2">
                                                     <div class="form-group text-left">
@@ -660,36 +693,365 @@
                                                 <div class="col-lg-6">
                                                     <div class="row">
                                                         <div class="col-lg-4">
-                                                            <asp:CheckBox ID="chkb_otro_rppc" runat="server" AutoPostBack="true" Text="Otro en dias" />
+                                                            <asp:CheckBox ID="chkb_otro_rppc" runat="server" AutoPostBack="true" Text="Otro en dias" OnCheckedChanged="chkb_otro_rppc_CheckedChanged" />
                                                             <div class="form-group">
                                                                 <asp:TextBox CssClass="form-control input-box" ID="fotro_rppc" runat="server"></asp:TextBox>
                                                                 <div class="text-center">
                                                                     <asp:RequiredFieldValidator ID="rfv_fotro_rppc" runat="server" ErrorMessage="*Campo Obligatorio" ControlToValidate="fotro_rppc" ForeColor="DarkRed" Enabled="false"></asp:RequiredFieldValidator>
                                                                 </div>
                                                             </div>
-                                       
+
                                                         </div>
                                                         <div class="col-lg-4">
                                                             <div class="form-group">
                                                                 <br />
-                                                                <asp:Label CssClass="control-label fuente_css02" ID="Label1" runat="server" Text="04/04/2018"></asp:Label>
+                                                                <asp:Label CssClass="control-label fuente_css02" ID="lbl_otro_rppc" runat="server" Text=""></asp:Label>
                                                             </div>
                                                         </div>
                                                         <div class="col-lg-4">
                                                             <div class="form-group">
                                                                 <br />
-                                                                <asp:Label CssClass="control-label fuente_css02" ID="Label2" runat="server" Text="Fecha máxima de entrega: 04/04/2018"></asp:Label>
+                                                                <asp:Label CssClass="control-label fuente_css02" ID="lbl_fmaxe" runat="server" Text=""></asp:Label>
                                                             </div>
                                                             <div class="form-group text-left">
-                                                            <div class="text-right">
-                                                                <asp:Button CssClass="btn btn02" ID="btn_guardar_rppc" runat="server" Text="GUARDAR" TabIndex="13" OnClick="btn_guardar_rppc_Click"  />
+                                                                <div class="text-right">
+                                                                    <asp:Button CssClass="btn btn02" ID="btn_guardar_rppc" runat="server" Text="GUARDAR" TabIndex="13" OnClick="btn_guardar_rppc_Click" />
+                                                                </div>
                                                             </div>
-                                                        </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </ContentTemplate>
+                    <Triggers>
+                    </Triggers>
+                </asp:UpdatePanel>
+                <asp:UpdatePanel ID="up_ensa_comp" runat="server" UpdateMode="Conditional">
+                    <ContentTemplate>
+                        <div class="col-lg-2">
+                        </div>
+                        <div class="col-lg-10">
+                            <div class="col-lg-12 ">
+                                <div class="panel panel-default" id="pnl_ensa_comp" runat="server" visible="false">
+                                    <div class="panel-heading">
+                                        <p class="text-left">
+                                            <div class="input-group" id="div1" runat="server" visible="false">
+                                                <span class="input-group-addon">
+                                                    <asp:Label CssClass="control-label fuente_css02" ID="lbl_buscar_ensa_comp" runat="server" Text="*BUSCAR ÁREA:"></asp:Label>
+                                                </span>
+                                                <asp:TextBox CssClass="form-control input-box" ID="txt_buscar_ensa_comp" runat="server" placeholder="letras/números" TextMode="Search" TabIndex="3"></asp:TextBox>
+                                                <span class="input-group-btn">
+                                                    <asp:Button CssClass="btn btn01" ID="btn_buscar_ensa_comp" runat="server" Text="ACEPTAR" TabIndex="4" />
+                                                </span>
+                                            </div>
+                                            <div class="text-right">
+                                                <ajaxToolkit:AutoCompleteExtender ID="ace_buscar_ensa_comp" runat="server" ServiceMethod="SearchCustomers" MinimumPrefixLength="2" CompletionInterval="100" EnableCaching="true" CompletionSetCount="10" TargetControlID="txt_buscar_ensa_comp" FirstRowSelected="false"></ajaxToolkit:AutoCompleteExtender>
+                                                <asp:RequiredFieldValidator ID="rfv_buscar_ensa_comp" runat="server" ErrorMessage="*Campo Obligatorio" ControlToValidate="txt_buscar_ensa_comp" ForeColor="white" Enabled="false"></asp:RequiredFieldValidator>
+                                            </div>
+                                        </p>
+                                        <p class="text-right">
+                                            ENSAYE DE PRISMAS A COMPRESIÓN
+
+                                        <span>
+                                            <asp:LinkButton CssClass="btn btn02" ID="btn_agregar_ensa_comp" runat="server" ToolTip="AGREGAR ÁREA" TabIndex="1" OnClick="btn_agregar_ensa_comp_Click">
+                                                <i class="fas fa-plus" id="i_agregar_ensa_comp" runat="server"></i>
+                                            </asp:LinkButton>
+                                            <asp:LinkButton CssClass="btn btn02" ID="btn_editar_ensa_comp" runat="server" ToolTip="EDITAR ÁREA" TabIndex="2" OnClick="btn_editar_ensa_comp_Click">
+                                                <i class="far fa-edit" id="i_editar_ensa_comp" runat="server"></i>
+                                            </asp:LinkButton>
+                                        </span>
+                                            <br />
+                                            <asp:CheckBox ID="chkb_desacensa_comp" runat="server" AutoPostBack="true" Text="Desactivar validaciones" OnCheckedChanged="chkb_desacensa_comp_CheckedChanged" />
+                                        </p>
+                                    </div>
+                                    <div class="panel-body">
+                                        <h6>
+                                        <div class="row">
+
+                                            <div class="col-lg-2">
+                                                <div class="form-group text-left">
+                                                    <asp:Label CssClass="control-label fuente_css02" ID="lbl_ensa_comp_coment" runat="server" Text="CLAVE DE ENSAYE"></asp:Label>
+                                                </div>
+                                                <div class="form-group text-left">
+                                                    <asp:TextBox CssClass="form-control input-box" ID="txt_ensa_comp_coment" runat="server" placeholder="letras/números" BackColor="LightGray" ForeColor="#104D8D"></asp:TextBox>
+                                                    <div class="text-right">
+                                                        <asp:RequiredFieldValidator ID="rfv_ensa_comp_coment" runat="server" ErrorMessage="*Campo Obligatorio" ControlToValidate="txt_ensa_comp_coment" ForeColor="DarkRed" Enabled="false"></asp:RequiredFieldValidator>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group text-left">
+                                                    <asp:TextBox CssClass="form-control input-box" ID="TextBox1" runat="server" placeholder="letras/números" BackColor="LightGray" ForeColor="#104D8D"></asp:TextBox>
+                                                    <div class="text-right">
+                                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="*Campo Obligatorio" ControlToValidate="txt_ensa_comp_coment" ForeColor="DarkRed" Enabled="false"></asp:RequiredFieldValidator>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-2">
+                                                <div class="form-group text-left">
+                                                    <asp:Label CssClass="control-label fuente_css02" ID="Label1" runat="server" Text="MASA (kg)"></asp:Label>
+                                                </div>
+                                                <div class="form-group text-left">
+                                                    <asp:TextBox CssClass="form-control input-box" ID="TextBox2" runat="server" placeholder="letras/números" BackColor="LightGray" ForeColor="#104D8D"></asp:TextBox>
+                                                    <div class="text-right">
+                                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="*Campo Obligatorio" ControlToValidate="txt_ensa_comp_coment" ForeColor="DarkRed" Enabled="false"></asp:RequiredFieldValidator>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group text-left">
+                                                    <asp:TextBox CssClass="form-control input-box" ID="TextBox3" runat="server" placeholder="letras/números" BackColor="LightGray" ForeColor="#104D8D"></asp:TextBox>
+                                                    <div class="text-right">
+                                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="*Campo Obligatorio" ControlToValidate="txt_ensa_comp_coment" ForeColor="DarkRed" Enabled="false"></asp:RequiredFieldValidator>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-2">
+                                                <div class="form-group text-left">
+                                                    <asp:Label CssClass="control-label fuente_css02" ID="Label2" runat="server" Text="ALTURA"></asp:Label>
+                                                </div>
+                                                <div class="form-group text-left">
+                                                    <asp:TextBox CssClass="form-control input-box" ID="TextBox4" runat="server" placeholder="letras/números" BackColor="LightGray" ForeColor="#104D8D"></asp:TextBox>
+                                                    <div class="text-right">
+                                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="*Campo Obligatorio" ControlToValidate="txt_ensa_comp_coment" ForeColor="DarkRed" Enabled="false"></asp:RequiredFieldValidator>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group text-left">
+                                                    <asp:TextBox CssClass="form-control input-box" ID="TextBox5" runat="server" placeholder="letras/números" BackColor="LightGray" ForeColor="#104D8D"></asp:TextBox>
+                                                    <div class="text-right">
+                                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="*Campo Obligatorio" ControlToValidate="txt_ensa_comp_coment" ForeColor="DarkRed" Enabled="false"></asp:RequiredFieldValidator>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group text-left">
+                                                    <asp:TextBox CssClass="form-control input-box" ID="TextBox9" runat="server" placeholder="letras/números" BackColor="LightGray" ForeColor="#104D8D"></asp:TextBox>
+                                                    <div class="text-right">
+                                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ErrorMessage="*Campo Obligatorio" ControlToValidate="txt_ensa_comp_coment" ForeColor="DarkRed" Enabled="false"></asp:RequiredFieldValidator>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-2">
+                                                <div class="form-group text-left">
+                                                    <asp:Label CssClass="control-label fuente_css02" ID="Label3" runat="server" Text="LADOS"></asp:Label>
+                                                </div>
+                                                <div class="form-group text-left">
+                                                    <asp:TextBox CssClass="form-control input-box" ID="TextBox6" runat="server" placeholder="letras/números" BackColor="LightGray" ForeColor="#104D8D"></asp:TextBox>
+                                                    <div class="text-right">
+                                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ErrorMessage="*Campo Obligatorio" ControlToValidate="txt_ensa_comp_coment" ForeColor="DarkRed" Enabled="false"></asp:RequiredFieldValidator>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group text-left">
+                                                    <asp:TextBox CssClass="form-control input-box" ID="TextBox7" runat="server" placeholder="letras/números" BackColor="LightGray" ForeColor="#104D8D"></asp:TextBox>
+                                                    <div class="text-right">
+                                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ErrorMessage="*Campo Obligatorio" ControlToValidate="txt_ensa_comp_coment" ForeColor="DarkRed" Enabled="false"></asp:RequiredFieldValidator>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group text-left">
+                                                    <asp:TextBox CssClass="form-control input-box" ID="TextBox8" runat="server" placeholder="letras/números" BackColor="LightGray" ForeColor="#104D8D"></asp:TextBox>
+                                                    <div class="text-right">
+                                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ErrorMessage="*Campo Obligatorio" ControlToValidate="txt_ensa_comp_coment" ForeColor="DarkRed" Enabled="false"></asp:RequiredFieldValidator>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-2">
+                                                <div class="form-group text-left">
+                                                    <asp:Label CssClass="control-label fuente_css02" ID="Label4" runat="server" Text="DIRECTO"></asp:Label>
+                                                </div>
+                                                <div class="form-group text-left">
+                                                    <asp:TextBox CssClass="form-control input-box" ID="TextBox10" runat="server" placeholder="letras/números" BackColor="LightGray" ForeColor="#104D8D"></asp:TextBox>
+                                                    <div class="text-right">
+                                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" ErrorMessage="*Campo Obligatorio" ControlToValidate="txt_ensa_comp_coment" ForeColor="DarkRed" Enabled="false"></asp:RequiredFieldValidator>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group text-left">
+                                                    <asp:TextBox CssClass="form-control input-box" ID="TextBox11" runat="server" placeholder="letras/números" BackColor="LightGray" ForeColor="#104D8D"></asp:TextBox>
+                                                    <div class="text-right">
+                                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator11" runat="server" ErrorMessage="*Campo Obligatorio" ControlToValidate="txt_ensa_comp_coment" ForeColor="DarkRed" Enabled="false"></asp:RequiredFieldValidator>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-2">
+                                                <div class="form-group text-left">
+                                                    <asp:Label CssClass="control-label fuente_css02" ID="Label5" runat="server" Text="INTENSIDAD"></asp:Label>
+                                                </div>
+                                                <div class="form-group text-left">
+                                                    <asp:TextBox CssClass="form-control input-box" ID="TextBox12" runat="server" placeholder="letras/números" BackColor="LightGray" ForeColor="#104D8D"></asp:TextBox>
+                                                    <div class="text-right">
+                                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator12" runat="server" ErrorMessage="*Campo Obligatorio" ControlToValidate="txt_ensa_comp_coment" ForeColor="DarkRed" Enabled="false"></asp:RequiredFieldValidator>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group text-left">
+                                                    <asp:TextBox CssClass="form-control input-box" ID="TextBox13" runat="server" placeholder="letras/números" BackColor="LightGray" ForeColor="#104D8D"></asp:TextBox>
+                                                    <div class="text-right">
+                                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator13" runat="server" ErrorMessage="*Campo Obligatorio" ControlToValidate="txt_ensa_comp_coment" ForeColor="DarkRed" Enabled="false"></asp:RequiredFieldValidator>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+
+                                            <div class="col-lg-2">
+                                                <div class="form-group text-left">
+                                                    <asp:Label CssClass="control-label fuente_css02" ID="Label6" runat="server" Text="AREA (mm2)"></asp:Label>
+                                                </div>
+                                                <div class="form-group text-left">
+                                                    <asp:TextBox CssClass="form-control input-box" ID="TextBox14" runat="server" placeholder="letras/números" BackColor="LightGray" ForeColor="#104D8D"></asp:TextBox>
+                                                    <div class="text-right">
+                                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator14" runat="server" ErrorMessage="*Campo Obligatorio" ControlToValidate="txt_ensa_comp_coment" ForeColor="DarkRed" Enabled="false"></asp:RequiredFieldValidator>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group text-left">
+                                                    <asp:TextBox CssClass="form-control input-box" ID="TextBox15" runat="server" placeholder="letras/números" BackColor="LightGray" ForeColor="#104D8D"></asp:TextBox>
+                                                    <div class="text-right">
+                                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator15" runat="server" ErrorMessage="*Campo Obligatorio" ControlToValidate="txt_ensa_comp_coment" ForeColor="DarkRed" Enabled="false"></asp:RequiredFieldValidator>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-2">
+                                                <div class="form-group text-left">
+                                                    <asp:Label CssClass="control-label fuente_css02" ID="Label7" runat="server" Text="'PRESIÓN (kN)"></asp:Label>
+                                                </div>
+                                                <div class="form-group text-left">
+                                                    <asp:TextBox CssClass="form-control input-box" ID="TextBox16" runat="server" placeholder="letras/números" BackColor="LightGray" ForeColor="#104D8D"></asp:TextBox>
+                                                    <div class="text-right">
+                                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator16" runat="server" ErrorMessage="*Campo Obligatorio" ControlToValidate="txt_ensa_comp_coment" ForeColor="DarkRed" Enabled="false"></asp:RequiredFieldValidator>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group text-left">
+                                                    <asp:TextBox CssClass="form-control input-box" ID="TextBox17" runat="server" placeholder="letras/números" BackColor="LightGray" ForeColor="#104D8D"></asp:TextBox>
+                                                    <div class="text-right">
+                                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator17" runat="server" ErrorMessage="*Campo Obligatorio" ControlToValidate="txt_ensa_comp_coment" ForeColor="DarkRed" Enabled="false"></asp:RequiredFieldValidator>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-2">
+                                                <div class="form-group text-left">
+                                                    <asp:Label CssClass="control-label fuente_css02" ID="Label8" runat="server" Text="ESFUERZO (kgf/cm2)"></asp:Label>
+                                                </div>
+                                                <div class="form-group text-left">
+                                                    <asp:TextBox CssClass="form-control input-box" ID="TextBox18" runat="server" placeholder="letras/números" BackColor="LightGray" ForeColor="#104D8D"></asp:TextBox>
+                                                    <div class="text-right">
+                                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator18" runat="server" ErrorMessage="*Campo Obligatorio" ControlToValidate="txt_ensa_comp_coment" ForeColor="DarkRed" Enabled="false"></asp:RequiredFieldValidator>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group text-left">
+                                                    <asp:TextBox CssClass="form-control input-box" ID="TextBox19" runat="server" placeholder="letras/números" BackColor="LightGray" ForeColor="#104D8D"></asp:TextBox>
+                                                    <div class="text-right">
+                                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator19" runat="server" ErrorMessage="*Campo Obligatorio" ControlToValidate="txt_ensa_comp_coment" ForeColor="DarkRed" Enabled="false"></asp:RequiredFieldValidator>
+                                                    </div>
+                                                </div>
+                                            
+                                            </div>
+                                            <div class="col-lg-2">
+                                                <div class="form-group text-left">
+                                                    <asp:Label CssClass="control-label fuente_css02" ID="Label9" runat="server" Text="PROMEDIO (Kg/cm2)"></asp:Label>
+                                                </div>
+                                                <div class="form-group text-left">
+                                                    <asp:TextBox CssClass="form-control input-box" ID="TextBox21" runat="server" placeholder="letras/números" BackColor="LightGray" ForeColor="#104D8D"></asp:TextBox>
+                                                    <div class="text-right">
+                                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator21" runat="server" ErrorMessage="*Campo Obligatorio" ControlToValidate="txt_ensa_comp_coment" ForeColor="DarkRed" Enabled="false"></asp:RequiredFieldValidator>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group text-left">
+                                                    <asp:TextBox CssClass="form-control input-box" ID="TextBox22" runat="server" placeholder="letras/números" BackColor="LightGray" ForeColor="#104D8D"></asp:TextBox>
+                                                    <div class="text-right">
+                                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator22" runat="server" ErrorMessage="*Campo Obligatorio" ControlToValidate="txt_ensa_comp_coment" ForeColor="DarkRed" Enabled="false"></asp:RequiredFieldValidator>
+                                                    </div>
+                                                </div>
+                                              
+                                            </div>
+                                            <div class="col-lg-2">
+                                                <div class="form-group text-left">
+                                                    <asp:Label CssClass="control-label fuente_css02" ID="Label10" runat="server" Text="MASA VOL. (kg/m³)"></asp:Label>
+                                                </div>
+                                                <div class="form-group text-left">
+                                                    <asp:TextBox CssClass="form-control input-box" ID="TextBox24" runat="server" placeholder="letras/números" BackColor="LightGray" ForeColor="#104D8D"></asp:TextBox>
+                                                    <div class="text-right">
+                                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator24" runat="server" ErrorMessage="*Campo Obligatorio" ControlToValidate="txt_ensa_comp_coment" ForeColor="DarkRed" Enabled="false"></asp:RequiredFieldValidator>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group text-left">
+                                                    <asp:TextBox CssClass="form-control input-box" ID="TextBox25" runat="server" placeholder="letras/números" BackColor="LightGray" ForeColor="#104D8D"></asp:TextBox>
+                                                    <div class="text-right">
+                                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator25" runat="server" ErrorMessage="*Campo Obligatorio" ControlToValidate="txt_ensa_comp_coment" ForeColor="DarkRed" Enabled="false"></asp:RequiredFieldValidator>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-2">
+                                                <div class="form-group text-left">
+                                                    <asp:Label CssClass="control-label fuente_css02" ID="Label11" runat="server" Text="PORMEDIO (kg/m3)"></asp:Label>
+                                                </div>
+                                                <div class="form-group text-left">
+                                                    <asp:TextBox CssClass="form-control input-box" ID="TextBox26" runat="server" placeholder="letras/números" BackColor="LightGray" ForeColor="#104D8D"></asp:TextBox>
+                                                    <div class="text-right">
+                                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator26" runat="server" ErrorMessage="*Campo Obligatorio" ControlToValidate="txt_ensa_comp_coment" ForeColor="DarkRed" Enabled="false"></asp:RequiredFieldValidator>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group text-left">
+                                                    <asp:TextBox CssClass="form-control input-box" ID="TextBox27" runat="server" placeholder="letras/números" BackColor="LightGray" ForeColor="#104D8D"></asp:TextBox>
+                                                    <div class="text-right">
+                                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator27" runat="server" ErrorMessage="*Campo Obligatorio" ControlToValidate="txt_ensa_comp_coment" ForeColor="DarkRed" Enabled="false"></asp:RequiredFieldValidator>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+
+                                            <div class="col-lg-2">
+                                                <div class="form-group text-left">
+                                                    <asp:Label CssClass="control-label fuente_css02" ID="Label12" runat="server" Text="TIPO DE FALLA"></asp:Label>
+                                                </div>
+                                                <div class="form-group text-left">
+                                                    <asp:TextBox CssClass="form-control input-box" ID="TextBox28" runat="server" placeholder="letras/números" BackColor="LightGray" ForeColor="#104D8D"></asp:TextBox>
+                                                    <div class="text-right">
+                                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator28" runat="server" ErrorMessage="*Campo Obligatorio" ControlToValidate="txt_ensa_comp_coment" ForeColor="DarkRed" Enabled="false"></asp:RequiredFieldValidator>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group text-left">
+                                                    <asp:TextBox CssClass="form-control input-box" ID="TextBox29" runat="server" placeholder="letras/números" BackColor="LightGray" ForeColor="#104D8D"></asp:TextBox>
+                                                    <div class="text-right">
+                                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator29" runat="server" ErrorMessage="*Campo Obligatorio" ControlToValidate="txt_ensa_comp_coment" ForeColor="DarkRed" Enabled="false"></asp:RequiredFieldValidator>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-2">
+                                                <div class="form-group text-left">
+                                                    <asp:Label CssClass="control-label fuente_css02" ID="Label13" runat="server" Text="'PRESIÓN (kN)"></asp:Label>
+                                                </div>
+                                                <div class="form-group text-left">
+                                                    <asp:TextBox CssClass="form-control input-box" ID="TextBox30" runat="server" placeholder="letras/números" BackColor="LightGray" ForeColor="#104D8D"></asp:TextBox>
+                                                    <div class="text-right">
+                                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator30" runat="server" ErrorMessage="*Campo Obligatorio" ControlToValidate="txt_ensa_comp_coment" ForeColor="DarkRed" Enabled="false"></asp:RequiredFieldValidator>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group text-left">
+                                                    <asp:TextBox CssClass="form-control input-box" ID="TextBox31" runat="server" placeholder="letras/números" BackColor="LightGray" ForeColor="#104D8D"></asp:TextBox>
+                                                    <div class="text-right">
+                                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator31" runat="server" ErrorMessage="*Campo Obligatorio" ControlToValidate="txt_ensa_comp_coment" ForeColor="DarkRed" Enabled="false"></asp:RequiredFieldValidator>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-2">
+                                                <div class="form-group text-left">
+                                                    <asp:Label CssClass="control-label fuente_css02" ID="Label14" runat="server" Text="DIFERENCIA ENTRE PRISMAS COMPAÑEROS"></asp:Label>
+                                                </div>
+                                                <div class="form-group text-left">
+                                                    <asp:TextBox CssClass="form-control input-box" ID="TextBox32" runat="server" placeholder="letras/números" BackColor="LightGray" ForeColor="#104D8D"></asp:TextBox>
+                                                    <div class="text-right">
+                                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator32" runat="server" ErrorMessage="*Campo Obligatorio" ControlToValidate="txt_ensa_comp_coment" ForeColor="DarkRed" Enabled="false"></asp:RequiredFieldValidator>
+                                                    </div>
+                                                </div>
+                                          
+                                            </div>
+
+                                        </div>
+                                        <div class="col-lg-12">
+
+                                            <div class="text-right">
+                                                <asp:Button CssClass="btn btn02" ID="btn_guardar_ensa_comp" runat="server" Text="GUARDAR" TabIndex="13" OnClick="btn_guardar_ensa_comp_Click" />
+                                            </div>
+                                        </div>
+                                        </h6>
                                     </div>
                                 </div>
                             </div>

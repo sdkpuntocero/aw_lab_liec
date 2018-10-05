@@ -14,16 +14,7 @@ namespace aw_lab_liec
     
     public partial class fact_especimen
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public fact_especimen()
-        {
-            this.inf_mrp_concreto = new HashSet<inf_mrp_concreto>();
-        }
-    
         public int id_tipo_especimen { get; set; }
         public string desc_tipo_especimen { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<inf_mrp_concreto> inf_mrp_concreto { get; set; }
     }
 }

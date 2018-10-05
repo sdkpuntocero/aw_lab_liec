@@ -14,16 +14,7 @@ namespace aw_lab_liec
     
     public partial class fact_tipo_servicio
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public fact_tipo_servicio()
-        {
-            this.inf_clte_obras = new HashSet<inf_clte_obras>();
-        }
-    
         public int id_tipo_servicio { get; set; }
         public string desc_tipo_servicio { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<inf_clte_obras> inf_clte_obras { get; set; }
     }
 }

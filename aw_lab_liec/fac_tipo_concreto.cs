@@ -14,16 +14,7 @@ namespace aw_lab_liec
     
     public partial class fac_tipo_concreto
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public fac_tipo_concreto()
-        {
-            this.inf_mrp_concreto = new HashSet<inf_mrp_concreto>();
-        }
-    
         public int id_tipo_concreto { get; set; }
         public string desc_tipo_concreto { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<inf_mrp_concreto> inf_mrp_concreto { get; set; }
     }
 }

@@ -24,9 +24,5 @@ namespace aw_lab_liec
         public string comentarios { get; set; }
         public Nullable<System.DateTime> fecha_registro { get; set; }
         public System.Guid id_clte { get; set; }
-    
-        public virtual fact_est_obra fact_est_obra { get; set; }
-        public virtual fact_tipo_servicio fact_tipo_servicio { get; set; }
-        public virtual inf_clte inf_clte { get; set; }
     }
 }

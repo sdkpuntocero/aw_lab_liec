@@ -34,11 +34,6 @@ namespace aw_lab_liec
         public System.Guid id_usuario { get; set; }
         public Nullable<System.DateTime> fecha_registro { get; set; }
         public System.Guid id_emp { get; set; }
-    
-        public virtual fac_sit_concreto fac_sit_concreto { get; set; }
-        public virtual fac_tipo_concreto fac_tipo_concreto { get; set; }
-        public virtual fact_especimen fact_especimen { get; set; }
-        public virtual fact_est_concreto fact_est_concreto { get; set; }
-        public virtual inf_emp inf_emp { get; set; }
+        public Nullable<int> id_clte_obras { get; set; }
     }
 }
