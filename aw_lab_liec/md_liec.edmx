@@ -28,7 +28,7 @@
           <Property Name="id_est_areas" Type="int" />
           <Property Name="desc_areas" Type="varchar" MaxLength="50" />
           <Property Name="id_emp" Type="uniqueidentifier" Nullable="false" />
-          <Property Name="fecha_registro" Type="date" />
+          <Property Name="fecha_registro" Type="datetime" />
         </EntityType>
         <EntityType Name="fact_departamento">
           <Key>
@@ -107,6 +107,13 @@
           <Property Name="id_est_rub" Type="int" Nullable="false" />
           <Property Name="desc_est_rub" Type="varchar" MaxLength="50" />
         </EntityType>
+        <EntityType Name="fact_est_rubm">
+          <Key>
+            <PropertyRef Name="id_est_rubm" />
+          </Key>
+          <Property Name="id_est_rubm" Type="int" Nullable="false" />
+          <Property Name="desc_est_rubm" Type="varchar" MaxLength="50" />
+        </EntityType>
         <EntityType Name="fact_estatus">
           <Key>
             <PropertyRef Name="id_est_usr" />
@@ -159,8 +166,8 @@
           <Property Name="id_estatus_rpt" Type="int" />
           <Property Name="id_tipo_rubro" Type="int" />
           <Property Name="id_rubro" Type="uniqueidentifier" Nullable="false" />
-          <Property Name="monto" Type="money" />
-          <Property Name="fecha_registro" Type="date" />
+          <Property Name="monto" Type="decimal" Precision="19" Scale="4" />
+          <Property Name="fecha_registro" Type="datetime" />
           <Property Name="id_emp" Type="uniqueidentifier" />
           <Property Name="desc_caja" Type="varchar" MaxLength="150" />
           <Property Name="codigo_caja" Type="varchar" MaxLength="20" />
@@ -180,7 +187,7 @@
           <Property Name="callenum" Type="varchar" MaxLength="300" />
           <Property Name="d_codigo" Type="varchar" MaxLength="6" />
           <Property Name="id_asenta_cpcons" Type="int" />
-          <Property Name="fecha_registro" Type="date" />
+          <Property Name="fecha_registro" Type="datetime" />
           <Property Name="comentarios" Type="varchar(max)" />
           <Property Name="id_emp" Type="uniqueidentifier" Nullable="false" />
         </EntityType>
@@ -196,7 +203,7 @@
           <Property Name="contacto_obra" Type="varchar" MaxLength="150" />
           <Property Name="id_tipo_servicio" Type="int" Nullable="false" />
           <Property Name="comentarios" Type="varchar(max)" />
-          <Property Name="fecha_registro" Type="date" />
+          <Property Name="fecha_registro" Type="datetime" />
           <Property Name="id_clte" Type="uniqueidentifier" Nullable="false" />
         </EntityType>
         <EntityType Name="inf_conc_ec">
@@ -231,7 +238,7 @@
           <Property Name="tipofalla_a" Type="varchar" MaxLength="50" />
           <Property Name="tipofalla_b" Type="varchar" MaxLength="50" />
           <Property Name="dif_ab" Type="varchar" MaxLength="50" />
-          <Property Name="fecha_registro" Type="date" />
+          <Property Name="fecha_registro" Type="datetime" />
           <Property Name="id_mrp_concreto" Type="uniqueidentifier" Nullable="false" />
         </EntityType>
         <EntityType Name="inf_cont_usr">
@@ -253,7 +260,7 @@
           </Key>
           <Property Name="id_control_monto" Type="uniqueidentifier" Nullable="false" />
           <Property Name="monto" Type="float" />
-          <Property Name="fecha_registro" Type="date" />
+          <Property Name="fecha_registro" Type="datetime" />
           <Property Name="id_rubro" Type="uniqueidentifier" Nullable="false" />
         </EntityType>
         <EntityType Name="inf_email_envio">
@@ -269,7 +276,7 @@
           <Property Name="servidor_smtp" Type="varchar" MaxLength="50" />
           <Property Name="puerto" Type="int" />
           <Property Name="id_emp" Type="uniqueidentifier" Nullable="false" />
-          <Property Name="fecha_registro" Type="date" />
+          <Property Name="fecha_registro" Type="datetime" />
         </EntityType>
         <EntityType Name="inf_email_recepcion">
           <Key>
@@ -278,7 +285,7 @@
           <Property Name="id_email_recep" Type="uniqueidentifier" Nullable="false" />
           <Property Name="id_est_e_recep" Type="int" />
           <Property Name="email_recepcion" Type="varchar" MaxLength="50" />
-          <Property Name="fecha_registro" Type="date" />
+          <Property Name="fecha_registro" Type="datetime" />
           <Property Name="id_emp" Type="uniqueidentifier" Nullable="false" />
         </EntityType>
         <EntityType Name="inf_emp">
@@ -294,7 +301,7 @@
           <Property Name="d_codigo" Type="varchar" MaxLength="6" />
           <Property Name="id_asenta_cpcons" Type="int" />
           <Property Name="id_codigo" Type="int" />
-          <Property Name="fecha_registro" Type="date" />
+          <Property Name="fecha_registro" Type="datetime" />
         </EntityType>
         <EntityType Name="inf_gastos">
           <Key>
@@ -306,7 +313,7 @@
           <Property Name="id_tipo_rubro" Type="int" />
           <Property Name="id_rubro" Type="uniqueidentifier" />
           <Property Name="monto" Type="money" />
-          <Property Name="fecha_registro" Type="date" />
+          <Property Name="fecha_registro" Type="datetime" />
           <Property Name="id_emp" Type="uniqueidentifier" />
           <Property Name="desc_gasto" Type="varchar" MaxLength="255" />
           <Property Name="codigo_gasto" Type="varchar" MaxLength="255" />
@@ -328,22 +335,22 @@
           <Property Name="id_mrp_concreto" Type="uniqueidentifier" Nullable="false" />
           <Property Name="id_est_concreto" Type="int" Nullable="false" />
           <Property Name="no_muesra" Type="varchar" MaxLength="50" />
-          <Property Name="fecha_colado" Type="date" />
-          <Property Name="fecha_recibe" Type="date" />
+          <Property Name="fecha_colado" Type="datetime" />
+          <Property Name="fecha_recibe" Type="datetime" />
           <Property Name="entrega" Type="varchar" MaxLength="50" />
           <Property Name="recibe" Type="varchar" MaxLength="50" />
           <Property Name="presion" Type="int" />
           <Property Name="id_tipo_especimen" Type="int" Nullable="false" />
           <Property Name="id_tipo_concreto" Type="int" Nullable="false" />
           <Property Name="id_sit_concreto" Type="int" Nullable="false" />
-          <Property Name="24_horas" Type="date" />
-          <Property Name="3_dias" Type="date" />
-          <Property Name="7_dias" Type="date" />
-          <Property Name="14_dias" Type="date" />
-          <Property Name="28_dias" Type="date" />
+          <Property Name="C24_horas" Type="datetime" />
+          <Property Name="C3_dias" Type="datetime" />
+          <Property Name="C7_dias" Type="datetime" />
+          <Property Name="C14_dias" Type="datetime" />
+          <Property Name="C28_dias" Type="datetime" />
           <Property Name="otra" Type="int" />
           <Property Name="id_usuario" Type="uniqueidentifier" Nullable="false" />
-          <Property Name="fecha_registro" Type="date" />
+          <Property Name="fecha_registro" Type="datetime" />
           <Property Name="id_emp" Type="uniqueidentifier" Nullable="false" />
           <Property Name="id_clte_obras" Type="int" />
         </EntityType>
@@ -357,12 +364,23 @@
           <Property Name="id_tipo_rubro" Type="int" />
           <Property Name="etiqueta_rubro" Type="varchar" MaxLength="10" />
           <Property Name="rubro" Type="varchar" MaxLength="150" />
-          <Property Name="presupuesto" Type="float" />
-          <Property Name="minimo" Type="int" />
-          <Property Name="maximo" Type="int" />
-          <Property Name="presupuesto_extra" Type="float" />
-          <Property Name="fecha_registro" Type="date" />
+          <Property Name="fecha_registro" Type="datetime" />
           <Property Name="id_emp" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="inf_rubro_mes">
+          <Key>
+            <PropertyRef Name="id_rubro_mes" />
+          </Key>
+          <Property Name="id_rubro_mes" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="id_est_rubm" Type="int" />
+          <Property Name="monto_fijo" Type="money" />
+          <Property Name="minimo" Type="int" />
+          <Property Name="min" Type="int" />
+          <Property Name="maximo" Type="int" />
+          <Property Name="max" Type="int" />
+          <Property Name="monto_extra" Type="money" />
+          <Property Name="fecha_registro" Type="datetime" />
+          <Property Name="id_rubro" Type="uniqueidentifier" />
         </EntityType>
         <EntityType Name="inf_sepomex">
           <Key>
@@ -402,8 +420,8 @@
           <Property Name="nombres" Type="varchar" MaxLength="50" />
           <Property Name="a_paterno" Type="varchar" MaxLength="50" />
           <Property Name="a_materno" Type="varchar" MaxLength="50" />
-          <Property Name="fecha_nacimiento" Type="date" />
-          <Property Name="fecha_registro" Type="date" />
+          <Property Name="fecha_nacimiento" Type="datetime" />
+          <Property Name="fecha_registro" Type="datetime" />
           <Property Name="id_emp" Type="uniqueidentifier" Nullable="false" />
         </EntityType>
         <Association Name="FK_contacto_usuarios_general_usuarios">
@@ -790,6 +808,30 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_inf_rubro_mes_fact_est_rubm">
+          <End Role="fact_est_rubm" Type="Self.fact_est_rubm" Multiplicity="0..1" />
+          <End Role="inf_rubro_mes" Type="Self.inf_rubro_mes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fact_est_rubm">
+              <PropertyRef Name="id_est_rubm" />
+            </Principal>
+            <Dependent Role="inf_rubro_mes">
+              <PropertyRef Name="id_est_rubm" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_rubro_mes_inf_rubro">
+          <End Role="inf_rubro" Type="Self.inf_rubro" Multiplicity="0..1" />
+          <End Role="inf_rubro_mes" Type="Self.inf_rubro_mes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="inf_rubro">
+              <PropertyRef Name="id_rubro" />
+            </Principal>
+            <Dependent Role="inf_rubro_mes">
+              <PropertyRef Name="id_rubro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_inf_usuarios_fact_areas">
           <End Role="fact_areas" Type="Self.fact_areas" Multiplicity="1" />
           <End Role="inf_usuarios" Type="Self.inf_usuarios" Multiplicity="*" />
@@ -817,6 +859,7 @@
           <EntitySet Name="fact_est_gast" EntityType="Self.fact_est_gast" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="fact_est_obra" EntityType="Self.fact_est_obra" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="fact_est_rub" EntityType="Self.fact_est_rub" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="fact_est_rubm" EntityType="Self.fact_est_rubm" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="fact_estatus" EntityType="Self.fact_estatus" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="fact_generos" EntityType="Self.fact_generos" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="fact_perfil" EntityType="Self.fact_perfil" Schema="dbo" store:Type="Tables" />
@@ -836,6 +879,7 @@
           <EntitySet Name="inf_gastos_dep" EntityType="Self.inf_gastos_dep" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="inf_mrp_concreto" EntityType="Self.inf_mrp_concreto" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="inf_rubro" EntityType="Self.inf_rubro" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="inf_rubro_mes" EntityType="Self.inf_rubro_mes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="inf_sepomex" EntityType="Self.inf_sepomex" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="inf_usuarios" EntityType="Self.inf_usuarios" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_contacto_usuarios_general_usuarios" Association="Self.FK_contacto_usuarios_general_usuarios">
@@ -966,6 +1010,14 @@
             <End Role="inf_emp" EntitySet="inf_emp" />
             <End Role="inf_rubro" EntitySet="inf_rubro" />
           </AssociationSet>
+          <AssociationSet Name="FK_inf_rubro_mes_fact_est_rubm" Association="Self.FK_inf_rubro_mes_fact_est_rubm">
+            <End Role="fact_est_rubm" EntitySet="fact_est_rubm" />
+            <End Role="inf_rubro_mes" EntitySet="inf_rubro_mes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_rubro_mes_inf_rubro" Association="Self.FK_inf_rubro_mes_inf_rubro">
+            <End Role="inf_rubro" EntitySet="inf_rubro" />
+            <End Role="inf_rubro_mes" EntitySet="inf_rubro_mes" />
+          </AssociationSet>
           <AssociationSet Name="FK_inf_usuarios_fact_areas" Association="Self.FK_inf_usuarios_fact_areas">
             <End Role="fact_areas" EntitySet="fact_areas" />
             <End Role="inf_usuarios" EntitySet="inf_usuarios" />
@@ -990,6 +1042,7 @@
           <EntitySet Name="fact_est_gast" EntityType="lab_liecModel.fact_est_gast" />
           <EntitySet Name="fact_est_obra" EntityType="lab_liecModel.fact_est_obra" />
           <EntitySet Name="fact_est_rub" EntityType="lab_liecModel.fact_est_rub" />
+          <EntitySet Name="fact_est_rubm" EntityType="lab_liecModel.fact_est_rubm" />
           <EntitySet Name="fact_estatus" EntityType="lab_liecModel.fact_estatus" />
           <EntitySet Name="fact_generos" EntityType="lab_liecModel.fact_generos" />
           <EntitySet Name="fact_perfil" EntityType="lab_liecModel.fact_perfil" />
@@ -1009,6 +1062,7 @@
           <EntitySet Name="inf_gastos_dep" EntityType="lab_liecModel.inf_gastos_dep" />
           <EntitySet Name="inf_mrp_concreto" EntityType="lab_liecModel.inf_mrp_concreto" />
           <EntitySet Name="inf_rubro" EntityType="lab_liecModel.inf_rubro" />
+          <EntitySet Name="inf_rubro_mes" EntityType="lab_liecModel.inf_rubro_mes" />
           <EntitySet Name="inf_sepomex" EntityType="lab_liecModel.inf_sepomex" />
           <EntitySet Name="inf_usuarios" EntityType="lab_liecModel.inf_usuarios" />
           <AssociationSet Name="FK_inf_mrp_concreto_fac_situacion_concreto" Association="lab_liecModel.FK_inf_mrp_concreto_fac_situacion_concreto">
@@ -1070,6 +1124,10 @@
           <AssociationSet Name="FK_inf_rubro_fact_est_rub" Association="lab_liecModel.FK_inf_rubro_fact_est_rub">
             <End Role="fact_est_rub" EntitySet="fact_est_rub" />
             <End Role="inf_rubro" EntitySet="inf_rubro" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_rubro_mes_fact_est_rubm" Association="lab_liecModel.FK_inf_rubro_mes_fact_est_rubm">
+            <End Role="fact_est_rubm" EntitySet="fact_est_rubm" />
+            <End Role="inf_rubro_mes" EntitySet="inf_rubro_mes" />
           </AssociationSet>
           <AssociationSet Name="FK_general_usuarios_fact_estatus" Association="lab_liecModel.FK_general_usuarios_fact_estatus">
             <End Role="fact_estatus" EntitySet="fact_estatus" />
@@ -1143,6 +1201,10 @@
             <End Role="inf_gastos" EntitySet="inf_gastos" />
             <End Role="inf_gastos_dep" EntitySet="inf_gastos_dep" />
           </AssociationSet>
+          <AssociationSet Name="FK_inf_rubro_mes_inf_rubro" Association="lab_liecModel.FK_inf_rubro_mes_inf_rubro">
+            <End Role="inf_rubro" EntitySet="inf_rubro" />
+            <End Role="inf_rubro_mes" EntitySet="inf_rubro_mes" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="fac_sit_concreto">
           <Key>
@@ -1169,7 +1231,7 @@
           <Property Name="id_est_areas" Type="Int32" />
           <Property Name="desc_areas" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="id_emp" Type="Guid" Nullable="false" />
-          <Property Name="fecha_registro" Type="DateTime" Precision="0" />
+          <Property Name="fecha_registro" Type="DateTime" Precision="3" />
           <NavigationProperty Name="fact_est_areas" Relationship="lab_liecModel.FK_fact_areas_fact_estatus_areas" FromRole="fact_areas" ToRole="fact_est_areas" />
           <NavigationProperty Name="inf_emp" Relationship="lab_liecModel.FK_fact_areas_inf_emp" FromRole="fact_areas" ToRole="inf_emp" />
           <NavigationProperty Name="inf_usuarios" Relationship="lab_liecModel.FK_inf_usuarios_fact_areas" FromRole="fact_areas" ToRole="inf_usuarios" />
@@ -1262,6 +1324,14 @@
           <Property Name="desc_est_rub" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="inf_rubro" Relationship="lab_liecModel.FK_inf_rubro_fact_est_rub" FromRole="fact_est_rub" ToRole="inf_rubro" />
         </EntityType>
+        <EntityType Name="fact_est_rubm">
+          <Key>
+            <PropertyRef Name="id_est_rubm" />
+          </Key>
+          <Property Name="id_est_rubm" Type="Int32" Nullable="false" />
+          <Property Name="desc_est_rubm" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="inf_rubro_mes" Relationship="lab_liecModel.FK_inf_rubro_mes_fact_est_rubm" FromRole="fact_est_rubm" ToRole="inf_rubro_mes" />
+        </EntityType>
         <EntityType Name="fact_estatus">
           <Key>
             <PropertyRef Name="id_est_usr" />
@@ -1321,7 +1391,7 @@
           <Property Name="id_tipo_rubro" Type="Int32" />
           <Property Name="id_rubro" Type="Guid" Nullable="false" />
           <Property Name="monto" Type="Decimal" Precision="19" Scale="4" />
-          <Property Name="fecha_registro" Type="DateTime" Precision="0" />
+          <Property Name="fecha_registro" Type="DateTime" Precision="3" />
           <Property Name="id_emp" Type="Guid" />
           <Property Name="desc_caja" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
           <Property Name="codigo_caja" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
@@ -1343,7 +1413,7 @@
           <Property Name="callenum" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
           <Property Name="d_codigo" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
           <Property Name="id_asenta_cpcons" Type="Int32" />
-          <Property Name="fecha_registro" Type="DateTime" Precision="0" />
+          <Property Name="fecha_registro" Type="DateTime" Precision="3" />
           <Property Name="comentarios" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="id_emp" Type="Guid" Nullable="false" />
           <NavigationProperty Name="fact_est_clte" Relationship="lab_liecModel.FK_inf_clte_fact_estatus_clte" FromRole="inf_clte" ToRole="fact_est_clte" />
@@ -1363,7 +1433,7 @@
           <Property Name="contacto_obra" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
           <Property Name="id_tipo_servicio" Type="Int32" Nullable="false" />
           <Property Name="comentarios" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="fecha_registro" Type="DateTime" Precision="0" />
+          <Property Name="fecha_registro" Type="DateTime" Precision="3" />
           <Property Name="id_clte" Type="Guid" Nullable="false" />
           <NavigationProperty Name="fact_est_obra" Relationship="lab_liecModel.FK_inf_clte_obras_fact_estatus_obra" FromRole="inf_clte_obras" ToRole="fact_est_obra" />
           <NavigationProperty Name="fact_tipo_servicio" Relationship="lab_liecModel.FK_inf_clte_obras_fact_tipo_servicio" FromRole="inf_clte_obras" ToRole="fact_tipo_servicio" />
@@ -1401,7 +1471,7 @@
           <Property Name="tipofalla_a" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="tipofalla_b" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="dif_ab" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="fecha_registro" Type="DateTime" Precision="0" />
+          <Property Name="fecha_registro" Type="DateTime" Precision="3" />
           <Property Name="id_mrp_concreto" Type="Guid" Nullable="false" />
           <NavigationProperty Name="inf_mrp_concreto" Relationship="lab_liecModel.FK_inf_conc_ec_inf_mrp_concreto" FromRole="inf_conc_ec" ToRole="inf_mrp_concreto" />
         </EntityType>
@@ -1425,7 +1495,7 @@
           </Key>
           <Property Name="id_control_monto" Type="Guid" Nullable="false" />
           <Property Name="monto" Type="Double" />
-          <Property Name="fecha_registro" Type="DateTime" Precision="0" />
+          <Property Name="fecha_registro" Type="DateTime" Precision="3" />
           <Property Name="id_rubro" Type="Guid" Nullable="false" />
           <NavigationProperty Name="inf_rubro" Relationship="lab_liecModel.FK_inf_control_montos_inf_rubro" FromRole="inf_control_montos" ToRole="inf_rubro" />
         </EntityType>
@@ -1442,7 +1512,7 @@
           <Property Name="servidor_smtp" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="puerto" Type="Int32" />
           <Property Name="id_emp" Type="Guid" Nullable="false" />
-          <Property Name="fecha_registro" Type="DateTime" Precision="0" />
+          <Property Name="fecha_registro" Type="DateTime" Precision="3" />
           <NavigationProperty Name="fact_est_e_env" Relationship="lab_liecModel.FK_inf_email_envio_fact_est_e_env" FromRole="inf_email_envio" ToRole="fact_est_e_env" />
           <NavigationProperty Name="inf_emp" Relationship="lab_liecModel.FK_inf_email_envio_inf_emp" FromRole="inf_email_envio" ToRole="inf_emp" />
         </EntityType>
@@ -1453,7 +1523,7 @@
           <Property Name="id_email_recep" Type="Guid" Nullable="false" />
           <Property Name="id_est_e_recep" Type="Int32" />
           <Property Name="email_recepcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="fecha_registro" Type="DateTime" Precision="0" />
+          <Property Name="fecha_registro" Type="DateTime" Precision="3" />
           <Property Name="id_emp" Type="Guid" Nullable="false" />
           <NavigationProperty Name="fact_est_e_recep" Relationship="lab_liecModel.FK_inf_email_recepcion_fact_est_e_recep" FromRole="inf_email_recepcion" ToRole="fact_est_e_recep" />
           <NavigationProperty Name="inf_emp" Relationship="lab_liecModel.FK_inf_email_recepcion_inf_emp" FromRole="inf_email_recepcion" ToRole="inf_emp" />
@@ -1471,7 +1541,7 @@
           <Property Name="d_codigo" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
           <Property Name="id_asenta_cpcons" Type="Int32" />
           <Property Name="id_codigo" Type="Int32" />
-          <Property Name="fecha_registro" Type="DateTime" Precision="0" />
+          <Property Name="fecha_registro" Type="DateTime" Precision="3" />
           <NavigationProperty Name="fact_areas" Relationship="lab_liecModel.FK_fact_areas_inf_emp" FromRole="inf_emp" ToRole="fact_areas" />
           <NavigationProperty Name="inf_caja" Relationship="lab_liecModel.FK_inf_caja_inf_emp" FromRole="inf_emp" ToRole="inf_caja" />
           <NavigationProperty Name="inf_clte" Relationship="lab_liecModel.FK_inf_clte_inf_emp" FromRole="inf_emp" ToRole="inf_clte" />
@@ -1491,7 +1561,7 @@
           <Property Name="id_tipo_rubro" Type="Int32" />
           <Property Name="id_rubro" Type="Guid" />
           <Property Name="monto" Type="Decimal" Precision="19" Scale="4" />
-          <Property Name="fecha_registro" Type="DateTime" Precision="0" />
+          <Property Name="fecha_registro" Type="DateTime" Precision="3" />
           <Property Name="id_emp" Type="Guid" />
           <Property Name="desc_gasto" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="codigo_gasto" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
@@ -1517,22 +1587,22 @@
           <Property Name="id_mrp_concreto" Type="Guid" Nullable="false" />
           <Property Name="id_est_concreto" Type="Int32" Nullable="false" />
           <Property Name="no_muesra" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="fecha_colado" Type="DateTime" Precision="0" />
-          <Property Name="fecha_recibe" Type="DateTime" Precision="0" />
+          <Property Name="fecha_colado" Type="DateTime" Precision="3" />
+          <Property Name="fecha_recibe" Type="DateTime" Precision="3" />
           <Property Name="entrega" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="recibe" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="presion" Type="Int32" />
           <Property Name="id_tipo_especimen" Type="Int32" Nullable="false" />
           <Property Name="id_tipo_concreto" Type="Int32" Nullable="false" />
           <Property Name="id_sit_concreto" Type="Int32" Nullable="false" />
-          <Property Name="C24_horas" Type="DateTime" Precision="0" />
-          <Property Name="C3_dias" Type="DateTime" Precision="0" />
-          <Property Name="C7_dias" Type="DateTime" Precision="0" />
-          <Property Name="C14_dias" Type="DateTime" Precision="0" />
-          <Property Name="C28_dias" Type="DateTime" Precision="0" />
+          <Property Name="C24_horas" Type="DateTime" Precision="3" />
+          <Property Name="C3_dias" Type="DateTime" Precision="3" />
+          <Property Name="C7_dias" Type="DateTime" Precision="3" />
+          <Property Name="C14_dias" Type="DateTime" Precision="3" />
+          <Property Name="C28_dias" Type="DateTime" Precision="3" />
           <Property Name="otra" Type="Int32" />
           <Property Name="id_usuario" Type="Guid" Nullable="false" />
-          <Property Name="fecha_registro" Type="DateTime" Precision="0" />
+          <Property Name="fecha_registro" Type="DateTime" Precision="3" />
           <Property Name="id_emp" Type="Guid" Nullable="false" />
           <Property Name="id_clte_obras" Type="Int32" />
           <NavigationProperty Name="fac_sit_concreto" Relationship="lab_liecModel.FK_inf_mrp_concreto_fac_situacion_concreto" FromRole="inf_mrp_concreto" ToRole="fac_sit_concreto" />
@@ -1552,16 +1622,30 @@
           <Property Name="id_tipo_rubro" Type="Int32" />
           <Property Name="etiqueta_rubro" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="rubro" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
-          <Property Name="presupuesto" Type="Double" />
-          <Property Name="minimo" Type="Int32" />
-          <Property Name="maximo" Type="Int32" />
-          <Property Name="presupuesto_extra" Type="Double" />
-          <Property Name="fecha_registro" Type="DateTime" Precision="0" />
+          <Property Name="fecha_registro" Type="DateTime" Precision="3" />
           <Property Name="id_emp" Type="Guid" />
           <NavigationProperty Name="fact_est_rub" Relationship="lab_liecModel.FK_inf_rubro_fact_est_rub" FromRole="inf_rubro" ToRole="fact_est_rub" />
           <NavigationProperty Name="fact_tipo_rubro" Relationship="lab_liecModel.FK_inf_rubro_fact_tipo_rubro" FromRole="inf_rubro" ToRole="fact_tipo_rubro" />
           <NavigationProperty Name="inf_control_montos" Relationship="lab_liecModel.FK_inf_control_montos_inf_rubro" FromRole="inf_rubro" ToRole="inf_control_montos" />
           <NavigationProperty Name="inf_emp" Relationship="lab_liecModel.FK_inf_rubro_inf_emp" FromRole="inf_rubro" ToRole="inf_emp" />
+          <NavigationProperty Name="inf_rubro_mes" Relationship="lab_liecModel.FK_inf_rubro_mes_inf_rubro" FromRole="inf_rubro" ToRole="inf_rubro_mes" />
+        </EntityType>
+        <EntityType Name="inf_rubro_mes">
+          <Key>
+            <PropertyRef Name="id_rubro_mes" />
+          </Key>
+          <Property Name="id_rubro_mes" Type="Guid" Nullable="false" />
+          <Property Name="id_est_rubm" Type="Int32" />
+          <Property Name="monto_fijo" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="minimo" Type="Int32" />
+          <Property Name="min" Type="Int32" />
+          <Property Name="maximo" Type="Int32" />
+          <Property Name="max" Type="Int32" />
+          <Property Name="monto_extra" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="fecha_registro" Type="DateTime" Precision="3" />
+          <Property Name="id_rubro" Type="Guid" />
+          <NavigationProperty Name="fact_est_rubm" Relationship="lab_liecModel.FK_inf_rubro_mes_fact_est_rubm" FromRole="inf_rubro_mes" ToRole="fact_est_rubm" />
+          <NavigationProperty Name="inf_rubro" Relationship="lab_liecModel.FK_inf_rubro_mes_inf_rubro" FromRole="inf_rubro_mes" ToRole="inf_rubro" />
         </EntityType>
         <EntityType Name="inf_sepomex">
           <Key>
@@ -1601,8 +1685,8 @@
           <Property Name="nombres" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="a_paterno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="a_materno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="fecha_nacimiento" Type="DateTime" Precision="0" />
-          <Property Name="fecha_registro" Type="DateTime" Precision="0" />
+          <Property Name="fecha_nacimiento" Type="DateTime" Precision="3" />
+          <Property Name="fecha_registro" Type="DateTime" Precision="3" />
           <Property Name="id_emp" Type="Guid" Nullable="false" />
           <NavigationProperty Name="fact_areas" Relationship="lab_liecModel.FK_inf_usuarios_fact_areas" FromRole="inf_usuarios" ToRole="fact_areas" />
           <NavigationProperty Name="fact_departamento" Relationship="lab_liecModel.FK_general_usuarios_fact_departamento" FromRole="inf_usuarios" ToRole="fact_departamento" />
@@ -1788,6 +1872,18 @@
             </Principal>
             <Dependent Role="inf_rubro">
               <PropertyRef Name="id_est_rub" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_rubro_mes_fact_est_rubm">
+          <End Type="lab_liecModel.fact_est_rubm" Role="fact_est_rubm" Multiplicity="0..1" />
+          <End Type="lab_liecModel.inf_rubro_mes" Role="inf_rubro_mes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fact_est_rubm">
+              <PropertyRef Name="id_est_rubm" />
+            </Principal>
+            <Dependent Role="inf_rubro_mes">
+              <PropertyRef Name="id_est_rubm" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -2007,6 +2103,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_inf_rubro_mes_inf_rubro">
+          <End Type="lab_liecModel.inf_rubro" Role="inf_rubro" Multiplicity="0..1" />
+          <End Type="lab_liecModel.inf_rubro_mes" Role="inf_rubro_mes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="inf_rubro">
+              <PropertyRef Name="id_rubro" />
+            </Principal>
+            <Dependent Role="inf_rubro_mes">
+              <PropertyRef Name="id_rubro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -2126,6 +2234,14 @@
               <MappingFragment StoreEntitySet="fact_est_rub">
                 <ScalarProperty Name="desc_est_rub" ColumnName="desc_est_rub" />
                 <ScalarProperty Name="id_est_rub" ColumnName="id_est_rub" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="fact_est_rubm">
+            <EntityTypeMapping TypeName="lab_liecModel.fact_est_rubm">
+              <MappingFragment StoreEntitySet="fact_est_rubm">
+                <ScalarProperty Name="desc_est_rubm" ColumnName="desc_est_rubm" />
+                <ScalarProperty Name="id_est_rubm" ColumnName="id_est_rubm" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -2368,11 +2484,11 @@
                 <ScalarProperty Name="fecha_registro" ColumnName="fecha_registro" />
                 <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
                 <ScalarProperty Name="otra" ColumnName="otra" />
-                <ScalarProperty Name="C28_dias" ColumnName="28_dias" />
-                <ScalarProperty Name="C14_dias" ColumnName="14_dias" />
-                <ScalarProperty Name="C7_dias" ColumnName="7_dias" />
-                <ScalarProperty Name="C3_dias" ColumnName="3_dias" />
-                <ScalarProperty Name="C24_horas" ColumnName="24_horas" />
+                <ScalarProperty Name="C28_dias" ColumnName="C28_dias" />
+                <ScalarProperty Name="C14_dias" ColumnName="C14_dias" />
+                <ScalarProperty Name="C7_dias" ColumnName="C7_dias" />
+                <ScalarProperty Name="C3_dias" ColumnName="C3_dias" />
+                <ScalarProperty Name="C24_horas" ColumnName="C24_horas" />
                 <ScalarProperty Name="id_sit_concreto" ColumnName="id_sit_concreto" />
                 <ScalarProperty Name="id_tipo_concreto" ColumnName="id_tipo_concreto" />
                 <ScalarProperty Name="id_tipo_especimen" ColumnName="id_tipo_especimen" />
@@ -2392,16 +2508,28 @@
               <MappingFragment StoreEntitySet="inf_rubro">
                 <ScalarProperty Name="id_emp" ColumnName="id_emp" />
                 <ScalarProperty Name="fecha_registro" ColumnName="fecha_registro" />
-                <ScalarProperty Name="presupuesto_extra" ColumnName="presupuesto_extra" />
-                <ScalarProperty Name="maximo" ColumnName="maximo" />
-                <ScalarProperty Name="minimo" ColumnName="minimo" />
-                <ScalarProperty Name="presupuesto" ColumnName="presupuesto" />
                 <ScalarProperty Name="rubro" ColumnName="rubro" />
                 <ScalarProperty Name="etiqueta_rubro" ColumnName="etiqueta_rubro" />
                 <ScalarProperty Name="id_tipo_rubro" ColumnName="id_tipo_rubro" />
                 <ScalarProperty Name="id_est_rub" ColumnName="id_est_rub" />
                 <ScalarProperty Name="codigo_rubro" ColumnName="codigo_rubro" />
                 <ScalarProperty Name="id_rubro" ColumnName="id_rubro" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="inf_rubro_mes">
+            <EntityTypeMapping TypeName="lab_liecModel.inf_rubro_mes">
+              <MappingFragment StoreEntitySet="inf_rubro_mes">
+                <ScalarProperty Name="id_rubro" ColumnName="id_rubro" />
+                <ScalarProperty Name="fecha_registro" ColumnName="fecha_registro" />
+                <ScalarProperty Name="monto_extra" ColumnName="monto_extra" />
+                <ScalarProperty Name="max" ColumnName="max" />
+                <ScalarProperty Name="maximo" ColumnName="maximo" />
+                <ScalarProperty Name="min" ColumnName="min" />
+                <ScalarProperty Name="minimo" ColumnName="minimo" />
+                <ScalarProperty Name="monto_fijo" ColumnName="monto_fijo" />
+                <ScalarProperty Name="id_est_rubm" ColumnName="id_est_rubm" />
+                <ScalarProperty Name="id_rubro_mes" ColumnName="id_rubro_mes" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

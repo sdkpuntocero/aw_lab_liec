@@ -39,6 +39,7 @@ namespace aw_lab_liec
         public virtual DbSet<fact_est_gast> fact_est_gast { get; set; }
         public virtual DbSet<fact_est_obra> fact_est_obra { get; set; }
         public virtual DbSet<fact_est_rub> fact_est_rub { get; set; }
+        public virtual DbSet<fact_est_rubm> fact_est_rubm { get; set; }
         public virtual DbSet<fact_estatus> fact_estatus { get; set; }
         public virtual DbSet<fact_generos> fact_generos { get; set; }
         public virtual DbSet<fact_perfil> fact_perfil { get; set; }
@@ -58,6 +59,7 @@ namespace aw_lab_liec
         public virtual DbSet<inf_gastos_dep> inf_gastos_dep { get; set; }
         public virtual DbSet<inf_mrp_concreto> inf_mrp_concreto { get; set; }
         public virtual DbSet<inf_rubro> inf_rubro { get; set; }
+        public virtual DbSet<inf_rubro_mes> inf_rubro_mes { get; set; }
         public virtual DbSet<inf_sepomex> inf_sepomex { get; set; }
         public virtual DbSet<inf_usuarios> inf_usuarios { get; set; }
     }

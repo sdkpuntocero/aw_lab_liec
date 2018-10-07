@@ -176,6 +176,7 @@
       <DependentUpon>md_liec.edmx</DependentUpon>
       <LastGenOutput>md_liec.Context.cs</LastGenOutput>
     </Content>
+    <Content Include="md_liec.edmx.sql" />
     <Content Include="md_liec.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>md_liec.edmx</DependentUpon>
@@ -187,6 +188,7 @@
     <Content Include="panel_cont.aspx" />
     <Content Include="panel_desa_tec.aspx" />
     <Content Include="panel_recu_hum.aspx" />
+    <Content Include="pnl_cont.aspx" />
     <Content Include="pnl_ctrl.aspx" />
     <Content Include="Scripts\animateCss\animateCss.js" />
     <Content Include="Scripts\animateCss\animateCss.min.js" />
@@ -370,6 +372,9 @@
     <Compile Include="fact_est_rub.cs">
       <DependentUpon>md_liec.tt</DependentUpon>
     </Compile>
+    <Compile Include="fact_est_rubm.cs">
+      <DependentUpon>md_liec.tt</DependentUpon>
+    </Compile>
     <Compile Include="fact_generos.cs">
       <DependentUpon>md_liec.tt</DependentUpon>
     </Compile>
@@ -433,6 +438,9 @@
     <Compile Include="inf_rubro.cs">
       <DependentUpon>md_liec.tt</DependentUpon>
     </Compile>
+    <Compile Include="inf_rubro_mes.cs">
+      <DependentUpon>md_liec.tt</DependentUpon>
+    </Compile>
     <Compile Include="inf_sepomex.cs">
       <DependentUpon>md_liec.tt</DependentUpon>
     </Compile>
@@ -476,7 +484,6 @@
     </Compile>
     <Compile Include="panel_cont.aspx.cs">
       <DependentUpon>panel_cont.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="panel_cont.aspx.designer.cs">
       <DependentUpon>panel_cont.aspx</DependentUpon>
@@ -494,6 +501,13 @@
     </Compile>
     <Compile Include="panel_recu_hum.aspx.designer.cs">
       <DependentUpon>panel_recu_hum.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pnl_cont.aspx.cs">
+      <DependentUpon>pnl_cont.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pnl_cont.aspx.designer.cs">
+      <DependentUpon>pnl_cont.aspx</DependentUpon>
     </Compile>
     <Compile Include="pnl_ctrl.aspx.cs">
       <DependentUpon>pnl_ctrl.aspx</DependentUpon>

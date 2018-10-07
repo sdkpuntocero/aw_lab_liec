@@ -2,7 +2,7 @@
 {
     public class cn
     {
-        private static string con_sql = @"Data Source=192.168.1.253;Initial Catalog=lab_liec;User ID=u_liec;Password=dev_liec";
+        private static string con_sql = @"Data Source=192.168.2.10;Initial Catalog=lab_liec;User ID=desarrollo;Password=D3s4rr01l0";
         private static string con_postgreSQL = @"Server=localhost;Port=5432; User Id = development; Password=dev_.0;Database = im";
 
         public static string cn_SQL

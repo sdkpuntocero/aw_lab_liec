@@ -12,29 +12,17 @@ namespace aw_lab_liec
     using System;
     using System.Collections.Generic;
     
-    public partial class inf_rubro
+    public partial class fact_est_rubm
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public inf_rubro()
+        public fact_est_rubm()
         {
-            this.inf_control_montos = new HashSet<inf_control_montos>();
             this.inf_rubro_mes = new HashSet<inf_rubro_mes>();
         }
     
-        public System.Guid id_rubro { get; set; }
-        public string codigo_rubro { get; set; }
-        public Nullable<int> id_est_rub { get; set; }
-        public Nullable<int> id_tipo_rubro { get; set; }
-        public string etiqueta_rubro { get; set; }
-        public string rubro { get; set; }
-        public Nullable<System.DateTime> fecha_registro { get; set; }
-        public Nullable<System.Guid> id_emp { get; set; }
+        public int id_est_rubm { get; set; }
+        public string desc_est_rubm { get; set; }
     
-        public virtual fact_est_rub fact_est_rub { get; set; }
-        public virtual fact_tipo_rubro fact_tipo_rubro { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<inf_control_montos> inf_control_montos { get; set; }
-        public virtual inf_emp inf_emp { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<inf_rubro_mes> inf_rubro_mes { get; set; }
     }
