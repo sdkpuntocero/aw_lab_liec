@@ -27,7 +27,21 @@ namespace aw_lab_liec
 
         protected void lkb_capt_Click(object sender, EventArgs e)
         {
+            pnl_desa_tec.Visible = false;
+            pnl_desa_tec.Focus();
+            up_desa_tec.Update();
 
+            pnl_cont.Visible = false;
+            pnl_cont.Focus();
+            up_cont.Update();
+
+            pnl_recu_hum.Visible = false;
+            pnl_recu_hum.Focus();
+            up_recu_hum.Update();
+
+            pnl_capt.Visible = true;
+            pnl_capt.Focus();
+            up_capt.Update();
         }
 
         protected void lkb_cobr_Click(object sender, EventArgs e)
@@ -48,6 +62,10 @@ namespace aw_lab_liec
             pnl_desa_tec.Visible = false;
             pnl_desa_tec.Focus();
             up_desa_tec.Update();
+
+            pnl_capt.Visible = false;
+            pnl_capt.Focus();
+            up_capt.Update();
         }
 
         protected void lkb_coor_labcent_Click(object sender, EventArgs e)
@@ -68,6 +86,10 @@ namespace aw_lab_liec
             pnl_desa_tec.Visible = true;
             pnl_desa_tec.Focus();
             up_desa_tec.Update();
+
+            pnl_capt.Visible = false;
+            pnl_capt.Focus();
+            up_capt.Update();
         }
 
         protected void lkb_desa_neg_Click(object sender, EventArgs e)
@@ -133,7 +155,11 @@ namespace aw_lab_liec
             pnl_recu_hum.Visible = true;
             pnl_recu_hum.Focus();
             up_recu_hum.Update();
-        
+
+            pnl_capt.Visible = false;
+            pnl_capt.Focus();
+            up_capt.Update();
+
         }
 
         protected void lkb_supe_Click(object sender, EventArgs e)
@@ -160,6 +186,11 @@ namespace aw_lab_liec
         protected void lkb_desa_tec_i_Click(object sender, EventArgs e)
         {
             Response.Redirect("panel_desa_tec.aspx");
+        }
+
+        protected void lkb_capt_i_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("panel_capt.aspx");
         }
     }
 }

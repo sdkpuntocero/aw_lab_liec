@@ -22,5 +22,7 @@ namespace aw_lab_liec
         public string movil { get; set; }
         public string email { get; set; }
         public System.Guid id_usuario { get; set; }
+    
+        public virtual inf_usuarios inf_usuarios { get; set; }
     }
 }

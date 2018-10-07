@@ -14,7 +14,16 @@ namespace aw_lab_liec
     
     public partial class fact_est_gast
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public fact_est_gast()
+        {
+            this.inf_gastos = new HashSet<inf_gastos>();
+        }
+    
         public int id_est_gast { get; set; }
         public string desc_est_gast { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<inf_gastos> inf_gastos { get; set; }
     }
 }

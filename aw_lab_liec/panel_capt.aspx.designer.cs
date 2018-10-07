@@ -1579,697 +1579,652 @@ namespace aw_lab_liec {
         protected global::System.Web.UI.WebControls.CheckBox chkb_desacensa_comp;
         
         /// <summary>
-        /// Control lbl_ensa_comp_coment.
+        /// Control lbl_clavensa_ec.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_ensa_comp_coment;
+        protected global::System.Web.UI.WebControls.Label lbl_clavensa_ec;
         
         /// <summary>
-        /// Control txt_ensa_comp_coment.
+        /// Control txt_clavensa_a.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_ensa_comp_coment;
+        protected global::System.Web.UI.WebControls.TextBox txt_clavensa_a;
         
         /// <summary>
-        /// Control rfv_ensa_comp_coment.
+        /// Control rfv_clavensa_a.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_ensa_comp_coment;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_clavensa_a;
         
         /// <summary>
-        /// Control TextBox1.
+        /// Control txt_clavensa_b.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox txt_clavensa_b;
         
         /// <summary>
-        /// Control RequiredFieldValidator1.
+        /// Control rfv_clavensa_b.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_clavensa_b;
         
         /// <summary>
-        /// Control Label1.
+        /// Control lbl_masa_ec.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.WebControls.Label lbl_masa_ec;
         
         /// <summary>
-        /// Control TextBox2.
+        /// Control txt_masa_a.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox2;
+        protected global::System.Web.UI.WebControls.TextBox txt_masa_a;
         
         /// <summary>
-        /// Control RequiredFieldValidator2.
+        /// Control rfv_masa_a.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_masa_a;
         
         /// <summary>
-        /// Control TextBox3.
+        /// Control txt_masa_b.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox3;
+        protected global::System.Web.UI.WebControls.TextBox txt_masa_b;
         
         /// <summary>
-        /// Control RequiredFieldValidator3.
+        /// Control rfv_masa_b.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator3;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_masa_b;
         
         /// <summary>
-        /// Control Label2.
+        /// Control lbl_altu_ec.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
+        protected global::System.Web.UI.WebControls.Label lbl_altu_ec;
         
         /// <summary>
-        /// Control TextBox4.
+        /// Control txt_altu_a.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox4;
+        protected global::System.Web.UI.WebControls.TextBox txt_altu_a;
         
         /// <summary>
-        /// Control RequiredFieldValidator4.
+        /// Control rfv_altu_a.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator4;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_altu_a;
         
         /// <summary>
-        /// Control TextBox5.
+        /// Control txt_altu_b.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox5;
+        protected global::System.Web.UI.WebControls.TextBox txt_altu_b;
         
         /// <summary>
-        /// Control RequiredFieldValidator5.
+        /// Control rfv_altu_b.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator5;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_altu_b;
         
         /// <summary>
-        /// Control TextBox9.
+        /// Control txt_altu_c.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox9;
+        protected global::System.Web.UI.WebControls.TextBox txt_altu_c;
         
         /// <summary>
-        /// Control RequiredFieldValidator9.
+        /// Control rfv_altu_c.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator9;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_altu_c;
         
         /// <summary>
-        /// Control Label3.
+        /// Control lbl_lad_ec.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label3;
+        protected global::System.Web.UI.WebControls.Label lbl_lad_ec;
         
         /// <summary>
-        /// Control TextBox6.
+        /// Control txt_lad_a.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox6;
+        protected global::System.Web.UI.WebControls.TextBox txt_lad_a;
         
         /// <summary>
-        /// Control RequiredFieldValidator6.
+        /// Control rfv_lad_a.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator6;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_lad_a;
         
         /// <summary>
-        /// Control TextBox7.
+        /// Control txt_lad_b.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox7;
+        protected global::System.Web.UI.WebControls.TextBox txt_lad_b;
         
         /// <summary>
-        /// Control RequiredFieldValidator7.
+        /// Control rfv_lad_b.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator7;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_lad_b;
         
         /// <summary>
-        /// Control TextBox8.
+        /// Control txt_lad_c.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox8;
+        protected global::System.Web.UI.WebControls.TextBox txt_lad_c;
         
         /// <summary>
-        /// Control RequiredFieldValidator8.
+        /// Control rfv_lad_c.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator8;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_lad_c;
         
         /// <summary>
-        /// Control Label4.
+        /// Control lbl_dire_ec.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label4;
+        protected global::System.Web.UI.WebControls.Label lbl_dire_ec;
         
         /// <summary>
-        /// Control TextBox10.
+        /// Control txt_dire_a.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox10;
+        protected global::System.Web.UI.WebControls.TextBox txt_dire_a;
         
         /// <summary>
-        /// Control RequiredFieldValidator10.
+        /// Control rfv_dire_a.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator10;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_dire_a;
         
         /// <summary>
-        /// Control TextBox11.
+        /// Control txt_dire_b.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox11;
+        protected global::System.Web.UI.WebControls.TextBox txt_dire_b;
         
         /// <summary>
-        /// Control RequiredFieldValidator11.
+        /// Control rfv_dire_b.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator11;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_dire_b;
         
         /// <summary>
-        /// Control Label5.
+        /// Control lbl_inte_ec.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label5;
+        protected global::System.Web.UI.WebControls.Label lbl_inte_ec;
         
         /// <summary>
-        /// Control TextBox12.
+        /// Control txt_inte_a.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox12;
+        protected global::System.Web.UI.WebControls.TextBox txt_inte_a;
         
         /// <summary>
-        /// Control RequiredFieldValidator12.
+        /// Control rfv_inte_a.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator12;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_inte_a;
         
         /// <summary>
-        /// Control TextBox13.
+        /// Control txt_inte_b.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox13;
+        protected global::System.Web.UI.WebControls.TextBox txt_inte_b;
         
         /// <summary>
-        /// Control RequiredFieldValidator13.
+        /// Control rfv_inte_b.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator13;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_inte_b;
         
         /// <summary>
-        /// Control Label6.
+        /// Control lbl_area_ec.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label6;
+        protected global::System.Web.UI.WebControls.Label lbl_area_ec;
         
         /// <summary>
-        /// Control TextBox14.
+        /// Control txt_area_a.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox14;
+        protected global::System.Web.UI.WebControls.TextBox txt_area_a;
         
         /// <summary>
-        /// Control RequiredFieldValidator14.
+        /// Control rfv_area_a.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator14;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_area_a;
         
         /// <summary>
-        /// Control TextBox15.
+        /// Control txt_area_b.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox15;
+        protected global::System.Web.UI.WebControls.TextBox txt_area_b;
         
         /// <summary>
-        /// Control RequiredFieldValidator15.
+        /// Control rfv_area_b.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator15;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_area_b;
         
         /// <summary>
-        /// Control Label7.
+        /// Control lbl_pres_ec.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label7;
+        protected global::System.Web.UI.WebControls.Label lbl_pres_ec;
         
         /// <summary>
-        /// Control TextBox16.
+        /// Control txt_pres_a.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox16;
+        protected global::System.Web.UI.WebControls.TextBox txt_pres_a;
         
         /// <summary>
-        /// Control RequiredFieldValidator16.
+        /// Control rfv_pres_a.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator16;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_pres_a;
         
         /// <summary>
-        /// Control TextBox17.
+        /// Control txt_pres_b.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox17;
+        protected global::System.Web.UI.WebControls.TextBox txt_pres_b;
         
         /// <summary>
-        /// Control RequiredFieldValidator17.
+        /// Control rfv_pres_b.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator17;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_pres_b;
         
         /// <summary>
-        /// Control Label8.
+        /// Control lbl_esfu_ec.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label8;
+        protected global::System.Web.UI.WebControls.Label lbl_esfu_ec;
         
         /// <summary>
-        /// Control TextBox18.
+        /// Control txt_esfu_a.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox18;
+        protected global::System.Web.UI.WebControls.TextBox txt_esfu_a;
         
         /// <summary>
-        /// Control RequiredFieldValidator18.
+        /// Control rfv_esfu_a.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator18;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_esfu_a;
         
         /// <summary>
-        /// Control TextBox19.
+        /// Control txt_esfu_b.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox19;
+        protected global::System.Web.UI.WebControls.TextBox txt_esfu_b;
         
         /// <summary>
-        /// Control RequiredFieldValidator19.
+        /// Control rfv_esfu_b.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator19;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_esfu_b;
         
         /// <summary>
-        /// Control Label9.
+        /// Control lbl_esfuprom_ec.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label9;
+        protected global::System.Web.UI.WebControls.Label lbl_esfuprom_ec;
         
         /// <summary>
-        /// Control TextBox21.
+        /// Control txt_esfuprom_a.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox21;
+        protected global::System.Web.UI.WebControls.TextBox txt_esfuprom_a;
         
         /// <summary>
-        /// Control RequiredFieldValidator21.
+        /// Control rfv_esfuprom_a.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator21;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_esfuprom_a;
         
         /// <summary>
-        /// Control TextBox22.
+        /// Control txt_esfuprom_b.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox22;
+        protected global::System.Web.UI.WebControls.TextBox txt_esfuprom_b;
         
         /// <summary>
-        /// Control RequiredFieldValidator22.
+        /// Control rfv_esfuprom_b.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator22;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_esfuprom_b;
         
         /// <summary>
-        /// Control Label10.
+        /// Control lbl_masavol_ec.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label10;
+        protected global::System.Web.UI.WebControls.Label lbl_masavol_ec;
         
         /// <summary>
-        /// Control TextBox24.
+        /// Control txt_masavol_a.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox24;
+        protected global::System.Web.UI.WebControls.TextBox txt_masavol_a;
         
         /// <summary>
-        /// Control RequiredFieldValidator24.
+        /// Control rfv_masavol_a.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator24;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_masavol_a;
         
         /// <summary>
-        /// Control TextBox25.
+        /// Control txt_masavol_b.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox25;
+        protected global::System.Web.UI.WebControls.TextBox txt_masavol_b;
         
         /// <summary>
-        /// Control RequiredFieldValidator25.
+        /// Control rfv_masavol_b.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator25;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_masavol_b;
         
         /// <summary>
-        /// Control Label11.
+        /// Control lbl_masavolprom_ec.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label11;
+        protected global::System.Web.UI.WebControls.Label lbl_masavolprom_ec;
         
         /// <summary>
-        /// Control TextBox26.
+        /// Control txt_masavolprom_a.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox26;
+        protected global::System.Web.UI.WebControls.TextBox txt_masavolprom_a;
         
         /// <summary>
-        /// Control RequiredFieldValidator26.
+        /// Control rfv_masavolprom_a.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator26;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_masavolprom_a;
         
         /// <summary>
-        /// Control TextBox27.
+        /// Control txt_masavolprom_b.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox27;
+        protected global::System.Web.UI.WebControls.TextBox txt_masavolprom_b;
         
         /// <summary>
-        /// Control RequiredFieldValidator27.
+        /// Control rfv_masavolprom_b.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator27;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_masavolprom_b;
         
         /// <summary>
-        /// Control Label12.
+        /// Control lbl_tf_ec.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label12;
+        protected global::System.Web.UI.WebControls.Label lbl_tf_ec;
         
         /// <summary>
-        /// Control TextBox28.
+        /// Control txt_tf_a.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox28;
+        protected global::System.Web.UI.WebControls.TextBox txt_tf_a;
         
         /// <summary>
-        /// Control RequiredFieldValidator28.
+        /// Control rfv_tf_a.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator28;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_tf_a;
         
         /// <summary>
-        /// Control TextBox29.
+        /// Control txt_tf_b.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox29;
+        protected global::System.Web.UI.WebControls.TextBox txt_tf_b;
         
         /// <summary>
-        /// Control RequiredFieldValidator29.
+        /// Control rfv_tf_b.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator29;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_tf_b;
         
         /// <summary>
-        /// Control Label13.
+        /// Control lbl_dif_ab_ec.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label13;
+        protected global::System.Web.UI.WebControls.Label lbl_dif_ab_ec;
         
         /// <summary>
-        /// Control TextBox30.
+        /// Control txt_dif_ab_ec.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox30;
+        protected global::System.Web.UI.WebControls.TextBox txt_dif_ab_ec;
         
         /// <summary>
-        /// Control RequiredFieldValidator30.
+        /// Control rfv_dif_ab_ec.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator30;
-        
-        /// <summary>
-        /// Control TextBox31.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox31;
-        
-        /// <summary>
-        /// Control RequiredFieldValidator31.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator31;
-        
-        /// <summary>
-        /// Control Label14.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label14;
-        
-        /// <summary>
-        /// Control TextBox32.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox32;
-        
-        /// <summary>
-        /// Control RequiredFieldValidator32.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator32;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_dif_ab_ec;
         
         /// <summary>
         /// Control btn_guardar_ensa_comp.

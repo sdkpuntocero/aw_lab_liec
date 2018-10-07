@@ -24,5 +24,8 @@ namespace aw_lab_liec
         public Nullable<int> puerto { get; set; }
         public System.Guid id_emp { get; set; }
         public Nullable<System.DateTime> fecha_registro { get; set; }
+    
+        public virtual fact_est_e_env fact_est_e_env { get; set; }
+        public virtual inf_emp inf_emp { get; set; }
     }
 }

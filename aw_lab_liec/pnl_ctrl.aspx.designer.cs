@@ -706,6 +706,51 @@ namespace aw_lab_liec {
         protected global::System.Web.UI.WebControls.Label lbl_recu_hum_i;
         
         /// <summary>
+        /// Control up_capt.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel up_capt;
+        
+        /// <summary>
+        /// Control pnl_capt.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl pnl_capt;
+        
+        /// <summary>
+        /// Control lkb_capt_i.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lkb_capt_i;
+        
+        /// <summary>
+        /// Control i_capt_i.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl i_capt_i;
+        
+        /// <summary>
+        /// Control lbl_capt_i.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_capt_i;
+        
+        /// <summary>
         /// Control up_cont.
         /// </summary>
         /// <remarks>

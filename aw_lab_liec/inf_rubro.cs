@@ -14,6 +14,12 @@ namespace aw_lab_liec
     
     public partial class inf_rubro
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public inf_rubro()
+        {
+            this.inf_control_montos = new HashSet<inf_control_montos>();
+        }
+    
         public System.Guid id_rubro { get; set; }
         public string codigo_rubro { get; set; }
         public Nullable<int> id_est_rub { get; set; }
@@ -26,5 +32,11 @@ namespace aw_lab_liec
         public Nullable<double> presupuesto_extra { get; set; }
         public Nullable<System.DateTime> fecha_registro { get; set; }
         public Nullable<System.Guid> id_emp { get; set; }
+    
+        public virtual fact_est_rub fact_est_rub { get; set; }
+        public virtual fact_tipo_rubro fact_tipo_rubro { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<inf_control_montos> inf_control_montos { get; set; }
+        public virtual inf_emp inf_emp { get; set; }
     }
 }

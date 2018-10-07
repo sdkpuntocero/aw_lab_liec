@@ -14,7 +14,16 @@ namespace aw_lab_liec
     
     public partial class fact_est_clte
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public fact_est_clte()
+        {
+            this.inf_clte = new HashSet<inf_clte>();
+        }
+    
         public int id_est_clte { get; set; }
         public string desc_est_clte { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<inf_clte> inf_clte { get; set; }
     }
 }

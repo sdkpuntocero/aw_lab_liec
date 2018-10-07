@@ -403,6 +403,9 @@
     <Compile Include="inf_clte_obras.cs">
       <DependentUpon>md_liec.tt</DependentUpon>
     </Compile>
+    <Compile Include="inf_conc_ec.cs">
+      <DependentUpon>md_liec.tt</DependentUpon>
+    </Compile>
     <Compile Include="inf_control_montos.cs">
       <DependentUpon>md_liec.tt</DependentUpon>
     </Compile>

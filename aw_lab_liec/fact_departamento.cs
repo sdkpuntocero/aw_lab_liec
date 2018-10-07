@@ -14,7 +14,16 @@ namespace aw_lab_liec
     
     public partial class fact_departamento
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public fact_departamento()
+        {
+            this.inf_usuarios = new HashSet<inf_usuarios>();
+        }
+    
         public int id_departamento { get; set; }
         public string desc_departamento { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<inf_usuarios> inf_usuarios { get; set; }
     }
 }

@@ -18,5 +18,7 @@ namespace aw_lab_liec
         public Nullable<double> monto { get; set; }
         public Nullable<System.DateTime> fecha_registro { get; set; }
         public System.Guid id_rubro { get; set; }
+    
+        public virtual inf_rubro inf_rubro { get; set; }
     }
 }

@@ -48,6 +48,7 @@ namespace aw_lab_liec
         public virtual DbSet<inf_caja> inf_caja { get; set; }
         public virtual DbSet<inf_clte> inf_clte { get; set; }
         public virtual DbSet<inf_clte_obras> inf_clte_obras { get; set; }
+        public virtual DbSet<inf_conc_ec> inf_conc_ec { get; set; }
         public virtual DbSet<inf_cont_usr> inf_cont_usr { get; set; }
         public virtual DbSet<inf_control_montos> inf_control_montos { get; set; }
         public virtual DbSet<inf_email_envio> inf_email_envio { get; set; }

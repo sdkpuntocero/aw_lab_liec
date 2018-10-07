@@ -24,5 +24,8 @@ namespace aw_lab_liec
         public Nullable<System.Guid> id_emp { get; set; }
         public string desc_caja { get; set; }
         public string codigo_caja { get; set; }
+    
+        public virtual fact_est_caja fact_est_caja { get; set; }
+        public virtual inf_emp inf_emp { get; set; }
     }
 }

@@ -14,7 +14,16 @@ namespace aw_lab_liec
     
     public partial class fact_generos
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public fact_generos()
+        {
+            this.inf_usuarios = new HashSet<inf_usuarios>();
+        }
+    
         public int id_genero { get; set; }
         public string desc_genero { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<inf_usuarios> inf_usuarios { get; set; }
     }
 }

@@ -248,6 +248,28 @@
                     <Triggers>
                     </Triggers>
                 </asp:UpdatePanel>
+                <asp:UpdatePanel ID="up_capt" runat="server" UpdateMode="Conditional">
+                    <ContentTemplate>
+                        <div class="col-lg-8">
+                            <div class="col-lg-12 ">
+                                <div class="panel panel-default" id="pnl_capt" runat="server" visible="false">
+                                    <div class="panel-heading">
+                                        <p class="text-right">
+                                            <asp:LinkButton   ID="lkb_capt_i" runat="server" OnClick="lkb_capt_i_Click" ForeColor="white">
+                                                <i class="fas fa-file-signature" id="i_capt_i" runat="server"></i>
+                                                <asp:Label  ID="lbl_capt_i" runat="server" Text="CAPTURA"></asp:Label>
+                                            </asp:LinkButton>
+                                        </p>
+                                    </div>
+                                    <div class="panel-body">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </ContentTemplate>
+                    <Triggers>
+                    </Triggers>
+                </asp:UpdatePanel>
                 <asp:UpdatePanel ID="up_cont" runat="server" UpdateMode="Conditional">
                     <ContentTemplate>
                         <div class="col-lg-8">

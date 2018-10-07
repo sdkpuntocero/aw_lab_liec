@@ -14,7 +14,16 @@ namespace aw_lab_liec
     
     public partial class fact_est_e_recep
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public fact_est_e_recep()
+        {
+            this.inf_email_recepcion = new HashSet<inf_email_recepcion>();
+        }
+    
         public int id_est_e_recep { get; set; }
         public string desc_est_e_recep { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<inf_email_recepcion> inf_email_recepcion { get; set; }
     }
 }

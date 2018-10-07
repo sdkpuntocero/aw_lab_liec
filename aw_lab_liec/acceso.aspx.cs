@@ -35,7 +35,7 @@ namespace aw_lab_liec
 
                                 Session["s_usuario"] = displayAD;
 
-                                Response.Redirect("panel_cliente.aspx");
+                                Response.Redirect("pnl_ctrl.aspx");
                                 PropertyCollection pc = de.Properties;
                                 foreach (PropertyValueCollection col in pc)
                                 {
