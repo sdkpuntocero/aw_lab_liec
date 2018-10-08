@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
-using System.Web;
+using System.Net.Mail;
 using System.Web.Script.Services;
 using System.Web.Services;
 using System.Web.UI;
@@ -15,10 +16,11 @@ namespace aw_lab_liec
     {
         static private int acc_rubro, acc_gasto, int_pnlID;
         static private Guid guid_emp;
+
         protected void Page_Load(object sender, EventArgs e)
         {
-
         }
+
         #region funciones
 
         [ScriptMethod()]
@@ -78,6 +80,85 @@ namespace aw_lab_liec
             upModal.Update();
         }
 
+        private void enviarcorreo(string correo_e, string usuario_e, string clave_e, string asunto_e, string detale_e, string smtp_e, int puerto_e, DateTime registro_e, string correo_r, string trubro_e, string rubro_e, string monto_e, string usuario_reg)
+        {
+            string cuerpo_e = createEmailBody(detale_e, trubro_e, rubro_e, monto_e, usuario_reg, registro_e);
+
+            SendHtmlFormattedEmail(correo_e, asunto_e, cuerpo_e, correo_r, smtp_e, puerto_e, usuario_e, clave_e);
+        }
+
+        public string createEmailBody(string detale_e, string trubro_e, string rubro_e, string monto_e, string usuario_reg, DateTime registro_e)
+
+        {
+            string body = string.Empty;
+            //using streamreader for reading my htmltemplate
+
+            using (StreamReader reader = new StreamReader(Server.MapPath("~/HtmlTemplate.html")))
+
+            {
+                body = reader.ReadToEnd();
+            }
+
+            body = body.Replace("{detalle}", detale_e); //replacing the required things
+
+            body = body.Replace("{trubro}", trubro_e);
+
+            body = body.Replace("{erubro}", "");
+
+            body = body.Replace("{drubro}", rubro_e);
+
+            body = body.Replace("{monto}", monto_e);
+
+            body = body.Replace("{usuario}", usuario_reg);
+
+            body = body.Replace("{registro}", registro_e.ToShortDateString());
+
+            return body;
+        }
+
+        private void SendHtmlFormattedEmail(string correo_e, string asunto_e, string cuerpo_e, string correo_r, string smtp_e, int puerto_e, string usuario_e, string clave_e)
+
+        {
+            using (MailMessage mailMessage = new MailMessage())
+
+            {
+                mailMessage.From = new MailAddress(correo_e);
+
+                mailMessage.Subject = asunto_e;
+
+                mailMessage.Body = cuerpo_e;
+
+                mailMessage.IsBodyHtml = true;
+
+                mailMessage.To.Add(new MailAddress(correo_r));
+
+                SmtpClient smtp = new SmtpClient();
+
+                smtp.Host = smtp_e;
+
+                smtp.EnableSsl = true;
+
+                System.Net.NetworkCredential NetworkCred = new System.Net.NetworkCredential();
+
+                NetworkCred.UserName = usuario_e;
+
+                NetworkCred.Password = clave_e;
+                smtp.UseDefaultCredentials = true;
+
+                smtp.Credentials = NetworkCred;
+
+                smtp.Port = puerto_e;
+
+                try
+                {
+                    smtp.Send(mailMessage);
+                }
+                catch
+                {
+                }
+            }
+        }
+
         #endregion funciones
 
         #region rubro
@@ -86,7 +167,6 @@ namespace aw_lab_liec
         {
             acc_rubro = 0;
             int_pnlID = 3;
-
 
             pnl_gasto.Visible = false;
             up_gasto.Update();
@@ -223,7 +303,6 @@ namespace aw_lab_liec
                         max_rub = int.Parse(maximo_rubro.Text);
                         d_mont_fijo = decimal.Parse(mont_rubro.Text.Replace("$", ""));
 
-
                         if ((min_rub + max_rub) == 0 || (min_rub + max_rub) > 100 || (min_rub + max_rub) < 100)
                         {
                             minimo_rubro.Text = null;
@@ -337,9 +416,7 @@ namespace aw_lab_liec
 
                                     m_nrubro.inf_rubro_mes.Add(i_nrubm);
                                     m_nrubro.SaveChanges();
-
                                 }
-
                             }
 
                             limpia_txt_rubro();
@@ -358,7 +435,6 @@ namespace aw_lab_liec
                     else
                     {
                         Mensaje("Favor de seleccionar una un rubro");
-
                     }
                 }
                 else
@@ -372,7 +448,6 @@ namespace aw_lab_liec
                     min_rub = int.Parse(minimo_rubro.Text);
                     max_rub = int.Parse(maximo_rubro.Text);
                     d_mont_fijo = decimal.Parse(mont_rubro.Text.Replace("$", ""));
-
 
                     if ((min_rub + max_rub) == 0 || (min_rub + max_rub) > 100 || (min_rub + max_rub) < 100)
                     {
@@ -442,7 +517,6 @@ namespace aw_lab_liec
                                 {
                                     str_cod_rub = "LIEC-R" + string.Format("{0:000}", c_rub.Count + 1);
 
-
                                     var i_nrub = new inf_rubro
                                     {
                                         id_rubro = guid_nrubro,
@@ -482,7 +556,6 @@ namespace aw_lab_liec
                                 Mensaje("Tipo de rubro y etiqueta, ya existen en la base de datos, favor de re-intentar.");
                             }
                         }
-
                     }
                 }
             }
@@ -649,13 +722,7 @@ namespace aw_lab_liec
                                              r.id_tipo_rubro,
                                              r.etiqueta_rubro,
                                              r.rubro,
-
                                          }).FirstOrDefault();
-
-
-
-
-
 
                             var f_rubm = (from r in edm_rub.inf_rubro_mes
                                           where r.id_rubro == guid_rub
@@ -666,7 +733,6 @@ namespace aw_lab_liec
                                               r.monto_extra,
                                               r.minimo,
                                               r.maximo
-
                                           }).FirstOrDefault();
 
                             ddl_tipo_rubro.SelectedValue = f_rub.id_tipo_rubro.ToString();
@@ -774,10 +840,7 @@ namespace aw_lab_liec
 
         protected void ddl_rub_est_SelectedIndexChanged(object sender, EventArgs e)
         {
-
         }
-
-
 
         private void limpia_txt_rubro()
         {
@@ -803,10 +866,10 @@ namespace aw_lab_liec
             eti_rub.Text = null;
         }
 
-
         #endregion rubro
 
         #region gastos
+
         protected void lkb_cont_gast_Click(object sender, EventArgs e)
         {
             acc_gasto = 0;
@@ -822,8 +885,6 @@ namespace aw_lab_liec
             gv_gasto.Visible = false;
             limpia_txt_gasto();
             up_gasto.Update();
-
-
         }
 
         private void limpia_txt_gasto()
@@ -840,11 +901,11 @@ namespace aw_lab_liec
                 ddl_tipo_gasto.DataBind();
             }
             ddl_tipo_gasto.Items.Insert(0, new ListItem("SELECCIONAR", "0"));
+            ddl_eti_gasto.Items.Clear();
             ddl_eti_gasto.Items.Insert(0, new ListItem("SELECCIONAR", "0"));
             eti_rub.Text = null;
             desc_gasto.Text = null;
             mont_gasto.Text = null;
-
         }
 
         protected void btn_buscar_gasto_Click(object sender, EventArgs e)
@@ -865,7 +926,6 @@ namespace aw_lab_liec
                                         i_r.etiqueta_rubro,
                                         i_g.desc_gasto,
                                         i_r.fecha_registro
-
                                     }).OrderBy(x => x.codigo_gasto).ToList();
 
                     if (inf_user.Count == 0)
@@ -907,7 +967,6 @@ namespace aw_lab_liec
 
                     using (lab_liecEntities data_user = new lab_liecEntities())
                     {
-
                         var inf_user = (from i_g in data_user.inf_gastos
                                         join t_r in data_user.fact_tipo_rubro on i_g.id_tipo_rubro equals t_r.id_tipo_rubro
                                         join i_r in data_user.inf_rubro on i_g.id_rubro equals i_r.id_rubro
@@ -963,7 +1022,6 @@ namespace aw_lab_liec
             rfv_desc_gasto.Enabled = true;
             rfv_tipo_gasto.Enabled = true;
             rfv_mont_gasto.Enabled = true;
-
         }
 
         protected void btn_edit_gasto_Click(object sender, EventArgs e)
@@ -993,7 +1051,6 @@ namespace aw_lab_liec
 
         protected void gv_gasto_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
-
         }
 
         protected void gv_gasto_RowDataBound(object sender, GridViewRowEventArgs e)
@@ -1064,9 +1121,7 @@ namespace aw_lab_liec
                                              r.id_rubro,
                                              r.desc_gasto,
                                              r.monto
-
                                          }).FirstOrDefault();
-
 
                             ddl_tipo_gasto.SelectedValue = f_rub.id_tipo_rubro.ToString();
                             //eti_rub.Text = f_rub.etiqueta_gasto;
@@ -1074,7 +1129,6 @@ namespace aw_lab_liec
                             decimal moneyvalue = decimal.Parse(f_rub.monto.ToString());
                             string monto_rub = String.Format("{0:C}", moneyvalue);
                             mont_gasto.Text = monto_rub;
-
                         }
                     }
                     else
@@ -1087,7 +1141,6 @@ namespace aw_lab_liec
 
         protected void ddl_gasto_est_SelectedIndexChanged(object sender, EventArgs e)
         {
-
         }
 
         protected void ddl_tipo_gasto_SelectedIndexChanged(object sender, EventArgs e)
@@ -1212,7 +1265,6 @@ namespace aw_lab_liec
                     //        guid_idrubro = items_user.id_gasto;
                     //    }
 
-
                     //    using (var m_nrubro = new lab_liecEntities())
                     //    {
                     //        var i_nrubro = (from c in m_nrubro.inf_gastos
@@ -1295,121 +1347,218 @@ namespace aw_lab_liec
 
                     using (lab_liecEntities edm_gasto = new lab_liecEntities())
                     {
-                        var i_gasto = (from c in edm_gasto.inf_gastos
+                        var c_gasto = (from c in edm_gasto.inf_gastos
                                        select c).ToList();
-
-                        if (i_gasto.Count == 0)
+                        if (c_gasto.Count == 0)
                         {
+                            str_cod_gasto = "LIEC-G" + string.Format("{0:000}", c_gasto.Count + 1);
 
-
-                            var c_gasto = (from c in edm_gasto.inf_gastos
-                                           select c).ToList();
-                            if (c_gasto.Count == 0)
+                            var i_nrub = new inf_gastos
                             {
-                                str_cod_gasto = "LIEC-G" + string.Format("{0:000}", c_gasto.Count + 1);
+                                id_gasto = guid_nrubro,
+                                id_rubro = guid_rubf,
+                                id_est_gast = 1,
+                                codigo_gasto = str_cod_gasto,
+                                id_tipo_rubro = t_gasto,
+                                monto = decimal.Parse(d_mont_fijo.ToString()),
+                                desc_gasto = s_desc_gasto,
+                                fecha_registro = DateTime.Now,
+                                id_emp = guid_emp
+                            };
 
-                                var i_nrub = new inf_gastos
-                                {
-                                    id_gasto = guid_nrubro,
-                                    id_rubro = guid_rubf,
-                                    id_est_gast = 1,
-                                    codigo_gasto = str_cod_gasto,
-                                    id_tipo_rubro = t_gasto,
-                                    monto = decimal.Parse(d_mont_fijo.ToString()),
-                                    desc_gasto = s_desc_gasto,
-                                    fecha_registro = DateTime.Now,
-                                    id_emp = guid_emp
-                                };
+                            edm_gasto.inf_gastos.Add(i_nrub);
+                            edm_gasto.SaveChanges();
 
-                                edm_gasto.inf_gastos.Add(i_nrub);
-                                edm_gasto.SaveChanges();
+                            var i_gastos = (from i_g in edm_gasto.inf_gastos
+                                            where i_g.id_tipo_rubro == t_gasto
+                                            where i_g.id_rubro == guid_rubf
+                                            select new
+                                            {
+                                                i_g.monto,
+                                            }).ToList();
 
-                                var i_gastos = (from i_g in edm_gasto.inf_gastos
-                                                where i_g.id_tipo_rubro == t_gasto
-                                                where i_g.id_rubro == guid_rubf
-                                                select new
-                                                {
-                                                    i_g.monto,
-                                                }).ToList();
-
-                                if (i_gastos.Count == 0)
-                                {
-                                    monto_f = i_gastos.Count;
-                                }
-                                else
-                                {
-                                    monto_f = double.Parse(i_gastos.Sum(x => x.monto).ToString());
-                                }
-                                var i_rubm = (from i_g in edm_gasto.inf_rubro_mes
-                                              where i_g.id_rubro == guid_rubf
-                                              where i_g.id_est_rubm == 1
-                                              select new
-                                              {
-                                                  i_g.monto_fijo,
-                                                  i_g.minimo,
-                                                  i_g.min,
-                                                  i_g.maximo,
-                                                  i_g.max,
-
-                                              }).FirstOrDefault();
-
-                                double m_min = (Math.Truncate(Convert.ToDouble(i_rubm.monto_fijo) * 100.0) / 100.0) * ((Math.Truncate(Convert.ToDouble(i_rubm.minimo) * 100.0) / 100.0) / 100) + 1;
-
-                                if (monto_f >= m_min && i_rubm.min == 0)
-                                {
-                                    //enviar email 
-                                    using (lab_liecEntities data_user = new lab_liecEntities())
-                                    {
-                                        var igf = (from c in data_user.inf_rubro_mes
-                                                   where c.id_rubro == guid_rubf
-                                                   select c).FirstOrDefault();
-
-                                        igf.min = 1;
-                                        data_user.SaveChanges();
-                                    }
-
-
-                                }
-
-                                limpia_txt_gasto();
-                                Mensaje("Datos agregados con éxito.");
+                            if (i_gastos.Count == 0)
+                            {
+                                monto_f = i_gastos.Count;
                             }
                             else
                             {
-                                str_cod_gasto = "LIEC-G" + string.Format("{0:000}", c_gasto.Count + 1);
-
-
-                                var i_nrub = new inf_gastos
-                                {
-                                    id_gasto = guid_nrubro,
-                                    id_est_gast = 1,
-                                    codigo_gasto = str_cod_gasto,
-                                    id_tipo_rubro = t_gasto,
-                                    id_rubro = guid_rubf,
-                                    desc_gasto = s_desc_gasto,
-                                    fecha_registro = DateTime.Now,
-                                    id_emp = guid_emp
-                                };
-
-                                edm_gasto.inf_gastos.Add(i_nrub);
-                                edm_gasto.SaveChanges();
-
-
-
-
-                                limpia_txt_gasto();
-                                Mensaje("Datos agregados con éxito.");
+                                monto_f = double.Parse(i_gastos.Sum(x => x.monto).ToString());
                             }
+                            var i_rubm = (from i_g in edm_gasto.inf_rubro_mes
+                                          where i_g.id_rubro == guid_rubf
+                                          where i_g.id_est_rubm == 1
+                                          select new
+                                          {
+                                              i_g.monto_fijo,
+                                              i_g.minimo,
+                                              i_g.min,
+                                              i_g.maximo,
+                                              i_g.max,
+                                          }).FirstOrDefault();
+
+                            double m_min = (Math.Truncate(Convert.ToDouble(i_rubm.monto_fijo) * 100.0) / 100.0) * ((Math.Truncate(Convert.ToDouble(i_rubm.minimo) * 100.0) / 100.0) / 100) + 1;
+                            string monto_e = string.Format("{0:C}", (Math.Truncate(Convert.ToDouble(m_min) * 100.0) / 100.0));
+                            if (monto_f >= m_min && i_rubm.min == 0)
+                            {
+                                using (lab_liecEntities data_user = new lab_liecEntities())
+                                {
+                                    var igf = (from c in data_user.inf_rubro_mes
+                                               where c.id_rubro == guid_rubf
+                                               select c).FirstOrDefault();
+
+                                    var i_trub = (from c in data_user.fact_tipo_rubro
+                                                  where c.id_tipo_rubro == t_gasto
+                                                  select c).FirstOrDefault();
+
+                                    string ntrubro = i_trub.desc_tipo_rubro;
+
+                                    var i_rub = (from c in data_user.inf_rubro
+                                                 where c.id_rubro == guid_rubf
+                                                 select c).FirstOrDefault();
+
+                                    string nrubro = i_rub.rubro;
+
+                                    var i_ev = (from c in data_user.inf_email_envio
+
+                                                select c).FirstOrDefault();
+
+                                    string detalle_e = "MONTO DE GASTO IGUAL O MAYOR AL 25 % DEL PRESUPUESTO FIJO";
+
+                                    enviarcorreo(i_ev.email, i_ev.email, encrypta.Decrypt(i_ev.clave), i_ev.asunto, detalle_e, i_ev.servidor_smtp, int.Parse(i_ev.puerto.ToString()), DateTime.Now, "liec.sdk@outlook.com", ntrubro, nrubro, monto_e, "demo usuario");
+
+                                    igf.min = 1;
+                                    data_user.SaveChanges();
+                                }
+                            }
+
+                            limpia_txt_gasto();
+                            Mensaje("Datos agregados con éxito.");
                         }
                         else
                         {
-                            Mensaje("Tipo de rubro y etiqueta, ya existen en la base de datos, favor de re-intentar.");
+                            str_cod_gasto = "LIEC-G" + string.Format("{0:000}", c_gasto.Count + 1);
+
+                            var i_nrub = new inf_gastos
+                            {
+                                id_gasto = guid_nrubro,
+                                id_rubro = guid_rubf,
+                                id_est_gast = 1,
+                                codigo_gasto = str_cod_gasto,
+                                id_tipo_rubro = t_gasto,
+                                monto = decimal.Parse(d_mont_fijo.ToString()),
+                                desc_gasto = s_desc_gasto,
+                                fecha_registro = DateTime.Now,
+                                id_emp = guid_emp
+                            };
+
+                            edm_gasto.inf_gastos.Add(i_nrub);
+                            edm_gasto.SaveChanges();
+
+                            var i_gastos = (from i_g in edm_gasto.inf_gastos
+                                            where i_g.id_tipo_rubro == t_gasto
+                                            where i_g.id_rubro == guid_rubf
+                                            select new
+                                            {
+                                                i_g.monto,
+                                            }).ToList();
+
+                            if (i_gastos.Count == 0)
+                            {
+                                monto_f = i_gastos.Count;
+                            }
+                            else
+                            {
+                                monto_f = double.Parse(i_gastos.Sum(x => x.monto).ToString());
+                            }
+                            var i_rubm = (from i_g in edm_gasto.inf_rubro_mes
+                                          where i_g.id_rubro == guid_rubf
+                                          where i_g.id_est_rubm == 1
+                                          select new
+                                          {
+                                              i_g.monto_fijo,
+                                              i_g.minimo,
+                                              i_g.min,
+                                              i_g.maximo,
+                                              i_g.max,
+                                          }).FirstOrDefault();
+
+                            double m_min = (Math.Truncate(Convert.ToDouble(i_rubm.monto_fijo) * 100.0) / 100.0) * ((Math.Truncate(Convert.ToDouble(i_rubm.minimo) * 100.0) / 100.0) / 100) + 1;
+                            string monto_e = string.Format("{0:C}", (Math.Truncate(Convert.ToDouble(m_min) * 100.0) / 100.0));
+
+                            if (monto_f >= m_min && i_rubm.min == 0)
+                            {
+                                using (lab_liecEntities data_user = new lab_liecEntities())
+                                {
+                                    var igf = (from c in data_user.inf_rubro_mes
+                                               where c.id_rubro == guid_rubf
+                                               select c).FirstOrDefault();
+
+                                    var i_trub = (from c in data_user.fact_tipo_rubro
+                                                  where c.id_tipo_rubro == t_gasto
+                                                  select c).FirstOrDefault();
+
+                                    string ntrubro = i_trub.desc_tipo_rubro;
+
+                                    var i_rub = (from c in data_user.inf_rubro
+                                                 where c.id_rubro == guid_rubf
+                                                 select c).FirstOrDefault();
+
+                                    string nrubro = i_rub.rubro;
+
+                                    var i_ev = (from c in data_user.inf_email_envio
+
+                                                select c).FirstOrDefault();
+
+                                    string detalle_e = "MONTO DE GASTO IGUAL O MAYOR AL 25 % DEL PRESUPUESTO FIJO";
+
+                                    enviarcorreo(i_ev.email, i_ev.email, encrypta.Decrypt(i_ev.clave), i_ev.asunto, detalle_e, i_ev.servidor_smtp, int.Parse(i_ev.puerto.ToString()), DateTime.Now, "liec.sdk@outlook.com", ntrubro, nrubro, monto_e, "demo usuario");
+
+                                    igf.min = 1;
+                                    data_user.SaveChanges();
+                                }
+                            }
+                            else if (monto_f >= m_min && i_rubm.max == 0)
+                            {
+                                using (lab_liecEntities data_user = new lab_liecEntities())
+                                {
+                                    var igf = (from c in data_user.inf_rubro_mes
+                                               where c.id_rubro == guid_rubf
+                                               select c).FirstOrDefault();
+
+                                    var i_trub = (from c in data_user.fact_tipo_rubro
+                                                  where c.id_tipo_rubro == t_gasto
+                                                  select c).FirstOrDefault();
+
+                                    string ntrubro = i_trub.desc_tipo_rubro;
+
+                                    var i_rub = (from c in data_user.inf_rubro
+                                                 where c.id_rubro == guid_rubf
+                                                 select c).FirstOrDefault();
+
+                                    string nrubro = i_rub.rubro;
+
+                                    var i_ev = (from c in data_user.inf_email_envio
+
+                                                select c).FirstOrDefault();
+
+                                    string detalle_e = "MONTO DE GASTO IGUAL O MAYOR AL 25 % DEL PRESUPUESTO FIJO";
+
+                                    enviarcorreo(i_ev.email, i_ev.email, encrypta.Decrypt(i_ev.clave), i_ev.asunto, detalle_e, i_ev.servidor_smtp, int.Parse(i_ev.puerto.ToString()), DateTime.Now, "liec.sdk@outlook.com", ntrubro, nrubro, monto_e, "demo usuario");
+
+                                    igf.min = 1;
+                                    data_user.SaveChanges();
+                                }
+                            }
+
+                            limpia_txt_gasto();
+                            Mensaje("Datos agregados con éxito.");
                         }
                     }
                 }
             }
         }
 
-        #endregion
+        #endregion gastos
     }
 }

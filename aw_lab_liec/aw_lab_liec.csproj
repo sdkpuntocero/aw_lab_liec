@@ -166,11 +166,14 @@
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\fontawesome-webfont.ttf" />
     <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="HtmlTemplate.html" />
     <Content Include="img\agregar.png" />
     <Content Include="img\buscar.png" />
     <Content Include="img\editar.png" />
     <Content Include="img\guardar.png" />
     <Content Include="img\ico_liec.png" />
+    <Content Include="img\Logo-LIEC.png" />
+    <Content Include="img\logo_liec256.png" />
     <Content Include="md_liec.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>md_liec.edmx</DependentUpon>
